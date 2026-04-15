@@ -42,6 +42,19 @@ const MOCK_ROOMS = [
 ];
 
 const Home = () => {
+  const [filters, setFilters] = useState({
+    type: "all",
+    price: "all",
+    ac: "all",
+    status: "all",
+  });
+
+  const handleFilter = (key, val) => {
+    setFilters((prev) => ({
+      ...prev,
+      [key]: val,
+    }));
+  }
   return (
     <div className="bg-white text-slate-800 overflow-hidden">
 

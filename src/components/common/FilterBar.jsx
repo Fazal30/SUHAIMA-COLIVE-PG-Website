@@ -93,14 +93,20 @@ const FilterBar = ({ onFilterChange }) => {
         </div>
 
         {/* Reset Button */}
-        <Button 
-          variant="ghost" 
-          onClick={() => window.location.reload()}
-          className="text-slate-400 hover:text-[#DAA520] hover:bg-white/5 rounded-xl px-4"
-        >
-          <FaRedoAlt className="mr-2 text-xs" />
-          Reset
-        </Button>
+       <Button 
+  variant="ghost" 
+  onClick={() => {
+    // Manually trigger a reset for all keys if your Home.jsx supports it
+    handleChange("type", "all");
+    handleChange("price", "all");
+    handleChange("ac", "all");
+    handleChange("status", "all");
+  }}
+  className="text-slate-400 hover:text-[#DAA520] hover:bg-white/5 rounded-xl px-4"
+>
+  <FaRedoAlt className="mr-2 text-xs" />
+  Reset
+</Button>
 
       </div>
     </motion.div>
