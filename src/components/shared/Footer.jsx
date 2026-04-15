@@ -132,9 +132,9 @@ const Footer = () => {
         <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-xs tracking-widest uppercase">
           <p>© {currentYear} SUHAIMA COLIVE. Handcrafted for Premium Living.</p>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="/refund" className="hover:text-white transition-colors">Refund Policy</a>
           </div>
         </div>
       </div>

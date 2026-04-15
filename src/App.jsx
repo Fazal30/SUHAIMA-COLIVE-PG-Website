@@ -14,6 +14,9 @@ import Contact from "./pages/Contact";
 import { useEffect } from "react";
 import Amenities from "./pages/Amenities";
 import Rooms from "./pages/Rooms";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import RefundPolicy from "./pages/RefundPolicy";
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -37,6 +40,9 @@ function App() {
               <Route path="/amenities" element={<PageWrapper><Amenities /> </PageWrapper>} />
               <Route path="/rooms" element={<PageWrapper><Rooms /> </PageWrapper>} />
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+              <Route path="/privacy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
+              <Route path="/terms" element={<PageWrapper><TermsOfService /></PageWrapper>} />
+              <Route path="/refund" element={<PageWrapper><RefundPolicy /></PageWrapper>} />
             </Routes>
           </AnimatePresence>
         </main>
