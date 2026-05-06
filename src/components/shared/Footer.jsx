@@ -178,28 +178,41 @@ const Footer = () => {
             © {currentYear} SUHAIMA COLIVE. Handcrafted for <span className="text-white">Premium Living</span>.
           </div>
           
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10 order-1 md:order-2">
-            {["Privacy Policy", "Terms of Service", "Refund Policy"].map((text) => (
-              <a 
-                key={text} 
-                href={`/${text.toLowerCase().replace(/\s+/g, '')}`} 
-                className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-[#DAA520] transition-colors"
-              >
-                {text}
-              </a>
-            ))}
-          </div>
+          {/* Bottom Bar Links - Manually Defined */}
+<div className="flex flex-wrap justify-center gap-6 md:gap-10 order-1 md:order-2">
+  <Link 
+    to="/privacy" 
+    className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-[#DAA520] transition-colors"
+  >
+    Privacy Policy
+  </Link>
+
+  <Link 
+    to="/terms" 
+    className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-[#DAA520] transition-colors"
+  >
+    Terms of Service
+  </Link>
+
+  <Link 
+    to="/refund" 
+    className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-[#DAA520] transition-colors"
+  >
+    Refund Policy
+  </Link>
+</div>
+
         </div>
       </div>
 
       {/* --- MOBILE STICKY ACTION BAR --- */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-[400px] md:hidden z-50">
         <div className="bg-[#0A0C10]/90 backdrop-blur-2xl border border-white/10 p-2 rounded-[2rem] flex justify-between items-center shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-          <a href="tel:+919620996689" className="flex-1 flex flex-col items-center justify-center gap-1 text-white py-3 border-r border-white/5 hover:bg-white/5 rounded-l-2xl transition-all">
+          <a href="tel:+919187200607" className="flex-1 flex flex-col items-center justify-center gap-1 text-white py-3 border-r border-white/5 hover:bg-white/5 rounded-l-2xl transition-all">
             <FaPhoneAlt className="text-[#DAA520] text-lg" />
             <span className="text-[10px] font-black tracking-widest uppercase">Call</span>
           </a>
-          <a href="https://wa.me/919620996689" className="flex-[1.5] flex items-center justify-center gap-3 text-black bg-[#DAA520] mx-2 py-4 rounded-[1.5rem] font-black text-xs uppercase tracking-widest shadow-[0_10px_20px_rgba(218,165,32,0.3)] active:scale-95 transition-all">
+          <a href="https://wa.me/919187200607" className="flex-[1.5] flex items-center justify-center gap-3 text-black bg-[#DAA520] mx-2 py-4 rounded-[1.5rem] font-black text-xs uppercase tracking-widest shadow-[0_10px_20px_rgba(218,165,32,0.3)] active:scale-95 transition-all">
             <FaWhatsapp size={18} /> Book Now
           </a>
           <a href="mailto:suhaimacolivingpg@gmail.com" className="flex-1 flex flex-col items-center justify-center gap-1 text-white py-3 border-l border-white/5 hover:bg-white/5 rounded-r-2xl transition-all">

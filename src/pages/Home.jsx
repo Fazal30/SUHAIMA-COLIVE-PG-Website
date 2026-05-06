@@ -685,7 +685,7 @@ const Home = () => {
   </p>
 
   <a
-    href="https://wa.me/919620996689?text=Hi%20I%20am%20interested%20in%20SUHAIMA%20COLIVE%20PG"
+    href="https://wa.me/919187200607?text=Hi%20I%20am%20interested%20in%20SUHAIMA%20COLIVE%20PG"
     target="_blank"
     rel="noopener noreferrer"
   >

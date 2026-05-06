@@ -2,19 +2,30 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionHeader from "../components/shared/SectionHeader";
 import { FaExpandAlt, FaTimes, FaArrowRight } from "react-icons/fa";
+import room3 from "../assets/room-3.jpeg"
+import Washrooms from "../assets/bathroom.jpeg"
+import roof1 from "../assets/roof.jpeg"
+import roof2 from "../assets/roof2.jpeg"
+import Balcony from "../assets/balcony1.jpeg"
+import Balcony2 from "../assets/balcony2.jpeg"
+import room4 from "../assets/room-4.jpeg"
+
+
 
 const Gallery = () => {
   const [selectedImg, setSelectedImg] = useState(null);
 
   const images = [
     { url: "https://images.unsplash.com/photo-1555854817-40e098ee79bd", title: "Premium Lounge", category: "Common Area" },
-    { url: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf", title: "Luxury Suite", category: "Bedrooms" },
-    { url: "https://images.unsplash.com/photo-1522770179533-24471fcdba45", title: "Gourmet Kitchen", category: "Dining" },
+    { url: room4, title: "Luxury Suite", category: "Bedrooms" },
+    { url: Balcony, title: "Balcony", category: "Balcony" },
+    { url: Balcony2, title: "Balcony", category: "Balcony" },
     { url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2", title: "Tech Hub", category: "Work" },
-    { url: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c", title: "Single Room", category: "Bedrooms" },
+    { url: room3, title: "Single Room", category: "Bedrooms" },
     { url: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511", title: "Fitness Center", category: "Leisure" },
-    { url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267", title: "Rooftop Terrace", category: "Leisure" },
-    { url: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c", title: "Modern Washrooms", category: "Facilities" },
+    { url: roof1, title: "Rooftop Terrace", category: "Leisure" },
+    { url: roof2, title: "Rooftop Terrace", category: "Leisure" },
+    { url: Washrooms, title: "Modern Washrooms", category: "Facilities" },
   ];
 
   return (
