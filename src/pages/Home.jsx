@@ -33,6 +33,12 @@ import room6 from "../assets/room-6.jpeg"
 import room8 from "../assets/room-8.jpeg"
 import room9 from "../assets/room-9.jpeg"
 import room10 from "../assets/room-10.jpeg"
+import Washrooms from "../assets/bathroom.jpeg"
+import roof1 from "../assets/roof.jpeg"
+import roof2 from "../assets/roof2.jpeg"
+import Balcony from "../assets/balcony1.jpeg"
+import Balcony2 from "../assets/balcony2.jpeg"
+import Gallery from "./Gallery";
 
 // Animation
 const fadeInUp = {
@@ -481,14 +487,13 @@ const Home = () => {
 
       {/* GALLERY */}
       <section className="py-28 container mx-auto px-4">
-        <SectionHeader title="Gallery" subtitle="See your future home" centered />
-
+        {/* <SectionHeader title="Gallery" subtitle="See your future home" centered />
         <div className="grid md:grid-cols-4 gap-4 mt-12">
           {[
-            "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
-            "https://images.unsplash.com/photo-1524758631624-e2822e304c36",
-            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
-            "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf"
+            Balcony,
+            Balcony2,
+            roof1,
+            roof2
           ].map((img, i) => (
             <motion.img
               key={i}
@@ -497,7 +502,9 @@ const Home = () => {
               className="rounded-2xl h-60 w-full object-cover"
             />
           ))}
-        </div>
+        </div> */}
+        
+        <Gallery />
       </section>
 
       {/* TESTIMONIALS */}
