@@ -13,7 +13,6 @@ import AmenityIcon from "../components/common/AmenityIcon";
 const RoomDetails = () => {
   const { id } = useParams();
 
-  // In a real app, you'd fetch the room by ID. Using dummy data for now:
   const room = {
     type: "Premium Single Sharing",
     price: "15,000",

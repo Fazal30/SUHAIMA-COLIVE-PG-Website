@@ -9,9 +9,9 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 
 const Contact = () => {
-  const whatsappNumber = "919620996689";
-  const emailAddress = "info@codeinnovativetechnologies.com";
-  const locationText = "Gollahalli Main Road, Near My Nest Apartment, Shikaripalya, Electronic City, Bangalore 560105";
+  const whatsappNumber = "9187200607";
+  const emailAddress = "suhaimacolivingpg@gmail.com";
+  const locationText = "SUHAIMA COLIVING PG, GOLLAHALLI MAIN ROAD NEAR MY NEST APARTMENT, ELECTRONIC CITY, BANGALORE 560100";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,14 +67,14 @@ const Contact = () => {
                   { 
                     icon: FaPhoneAlt, 
                     t: "Call Us", 
-                    v: "+91 96209 96689", 
-                    link: "tel:+919620996689",
+                    v: "+91 91872 00607", 
+                    link: "tel:+919187200607",
                     color: "text-[#DAA520]" 
                   },
                   { 
                     icon: FaWhatsapp, 
                     t: "WhatsApp", 
-                    v: "+91 96209 96689", 
+                    v: "+91 91872 00607", 
                     link: `https://wa.me/${whatsappNumber}`,
                     color: "text-green-500" 
                   },
@@ -82,7 +82,7 @@ const Contact = () => {
                     icon: FaMapMarkerAlt, 
                     t: "Location", 
                     v: locationText, 
-                    link: "https://maps.google.com", // Add actual link if available
+                    link: "https://www.google.com/maps/place/12%C2%B049'58.8%22N+77%C2%B039'25.1%22E/@12.8329949,77.6543828,855m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d12.8329949!4d77.6569577?hl=en&entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D", 
                     color: "text-red-500" 
                   },
                   { 
@@ -166,14 +166,12 @@ const Contact = () => {
           </motion.div>
         </motion.div>
 
-        {/* --- LIVE MAP INTEGRATION --- */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mt-24 rounded-[4rem] overflow-hidden shadow-2xl h-[500px] relative border-4 border-white/5"
         >
-          {/* Replace src with your actual Google Maps Embed link for better accuracy */}
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.58474271424!2d77.6710!3d12.8427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6c9f280e29b1%3A0x8677c385a6a6877e!2sElectronic%20City!5e0!3m2!1sen!2sin!4v1713123456789!5m2!1sen!2sin" 
             width="100%" 

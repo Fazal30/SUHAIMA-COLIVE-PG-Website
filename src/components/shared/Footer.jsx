@@ -88,7 +88,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-white font-medium">Direct Line</p>
-                  <p className="text-slate-500">+91 96209 96689</p>
+                  <p className="text-slate-500">+91 91872 00607</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
@@ -139,7 +139,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* --- MOBILE QUICK ACTION BAR (Responsive Enhancement) --- */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:hidden z-50">
         <div className="bg-black/80 backdrop-blur-xl border border-white/10 p-2 rounded-full flex justify-between items-center shadow-2xl">
           <a href="tel:+91 9620996689" className="flex-1 flex items-center justify-center gap-2 text-white font-bold py-3 border-r border-white/10">

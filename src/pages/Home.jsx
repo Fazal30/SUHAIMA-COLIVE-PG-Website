@@ -23,6 +23,7 @@ import FilterBar from "../components/common/FilterBar";
 import RoomCard from "../components/common/RoomCard";
 import SectionHeader from "../components/shared/SectionHeader";
 import { useState } from "react";
+import Menu from "./Menu";
 
 // Animation
 const fadeInUp = {
@@ -343,6 +344,7 @@ const Home = () => {
 
   </div>
 </section>
+ <Menu />
 
       {/* ROOMS */}
 <section className="relative py-32 bg-gradient-to-br from-gray-50 via-white to-indigo-50 overflow-hidden">

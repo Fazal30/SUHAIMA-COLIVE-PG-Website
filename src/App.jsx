@@ -17,6 +17,7 @@ import Rooms from "./pages/Rooms";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import RefundPolicy from "./pages/RefundPolicy";
+import Menu from "./pages/Menu";
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -42,6 +43,7 @@ function App() {
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
               <Route path="/privacy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
               <Route path="/terms" element={<PageWrapper><TermsOfService /></PageWrapper>} />
+              <Route path="/menu" element={<PageWrapper><Menu /></PageWrapper>} />
               <Route path="/refund" element={<PageWrapper><RefundPolicy /></PageWrapper>} />
             </Routes>
           </AnimatePresence>

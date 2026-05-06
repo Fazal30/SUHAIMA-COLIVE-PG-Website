@@ -5,28 +5,34 @@ import {
   FaArrowRight, FaWhatsapp, FaInfoCircle, FaSync 
 } from "react-icons/fa";
 import { Button } from "../components/ui/button";
+import room1 from "../assets/room-1.jpeg"
+import room5 from "../assets/room-5.jpeg"
+import room2 from "../assets/room-2.jpeg"
+import room3 from "../assets/room-3.jpeg"
+import room4 from "../assets/room-4.jpeg"
+
 
 const ROOM_DATA = [
   {
     id: 1,
     type: "The Elite Single",
     category: "Luxury Private",
-    price: "15,000",
+    price: "13,000",
     images: [
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
-      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c",
-      "https://images.unsplash.com/photo-1505691938895-1758d7eaa511"
+      room3,
+      room4,
+      room5
     ],
-    amenities: ["Attached Balcony", "Smart TV", "Private Workstation", "King Bed"],
+    amenities: ["Attached Balcony", "Private Workstation", "King Bed"],
     description: "Designed for the focused professional. Complete privacy with premium interiors."
   },
   {
     id: 2,
     type: "Premium Double",
     category: "Shared Excellence",
-    price: "10,500",
+    price: "7500",
     images: [
-      "https://images.unsplash.com/photo-1554995207-c18c203602cb",
+      room1,
       "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"
     ],
@@ -37,9 +43,9 @@ const ROOM_DATA = [
     id: 3,
     type: "Executive Triple",
     category: "Community Living",
-    price: "8,500",
+    price: "6,500",
     images: [
-      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf",
+      room2,
       "https://images.unsplash.com/photo-1505691938895-1758d7eaa511",
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
     ],
@@ -52,7 +58,7 @@ const Rooms = () => {
   const [activeImageIndex, setActiveImageIndex] = useState({});
 
   const handleWhatsApp = (roomType) => {
-    window.open(`https://wa.me/919620996689?text=Hi, I want to book the ${roomType}.`, "_blank");
+    window.open(`https://wa.me/919187200607?text=Hi, I want to book the ${roomType}.`, "_blank");
   };
 
   return (
@@ -74,7 +80,6 @@ const Rooms = () => {
           </p>
         </div>
 
-        {/* --- ROOM LISTING --- */}
         <div className="space-y-32">
           {ROOM_DATA.map((room, index) => (
             <motion.div 
@@ -85,7 +90,6 @@ const Rooms = () => {
               className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}
             >
               
-              {/* --- IMAGE VIEWER (Simulated 360 & Gallery) --- */}
               <div className="w-full lg:w-3/5 group relative">
                 <div className="relative h-[400px] md:h-[550px] w-full rounded-[3rem] overflow-hidden border border-white/10">
                   <AnimatePresence mode="wait">
