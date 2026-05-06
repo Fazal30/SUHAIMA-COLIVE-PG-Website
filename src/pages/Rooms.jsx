@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  FaBed, FaUsers, FaCheckCircle, FaCube, 
+  FaCheckCircle, FaCube, 
   FaArrowRight, FaWhatsapp, FaInfoCircle, FaSync 
 } from "react-icons/fa";
 import { Button } from "../components/ui/button";
@@ -10,7 +10,10 @@ import room5 from "../assets/room-5.jpeg"
 import room2 from "../assets/room-2.jpeg"
 import room3 from "../assets/room-3.jpeg"
 import room4 from "../assets/room-4.jpeg"
-
+import room6 from "../assets/room-6.jpeg"
+import room8 from "../assets/room-8.jpeg"
+import room9 from "../assets/room-9.jpeg"
+import room10 from "../assets/room-10.jpeg"
 
 const ROOM_DATA = [
   {
@@ -32,9 +35,9 @@ const ROOM_DATA = [
     category: "Shared Excellence",
     price: "7500",
     images: [
+      room8,
+      room6,
       room1,
-      "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"
     ],
     amenities: ["Spacious Storage", "Individual Desks", "Twin Beds", "Task Lighting"],
     description: "The perfect balance of social living and personal comfort. Shared by two."
@@ -46,8 +49,8 @@ const ROOM_DATA = [
     price: "6,500",
     images: [
       room2,
-      "https://images.unsplash.com/photo-1505691938895-1758d7eaa511",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
+      room9,
+      room10
     ],
     amenities: ["Extra Storage", "Lounge Access", "AC/Non-AC", "High Ceilings"],
     description: "Affordable luxury for students and young creators. Massive community vibes."

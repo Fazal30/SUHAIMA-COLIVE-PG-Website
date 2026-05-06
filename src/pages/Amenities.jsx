@@ -5,6 +5,7 @@ import {
   FaGlassCheers, FaDumbbell, FaWater, FaCouch 
 } from "react-icons/fa";
 import SectionHeader from "../components/shared/SectionHeader";
+import Menu from "./Menu";
 
 const Amenities = () => {
   const containerVariants = {
@@ -129,6 +130,9 @@ const Amenities = () => {
             ))}
           </div>
         </div>
+
+        <Menu />
+
 
         {/* --- LIFESTYLE CALLOUT --- */}
         <motion.div 

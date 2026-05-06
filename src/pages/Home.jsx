@@ -24,6 +24,15 @@ import RoomCard from "../components/common/RoomCard";
 import SectionHeader from "../components/shared/SectionHeader";
 import { useState } from "react";
 import Menu from "./Menu";
+import room1 from "../assets/room-1.jpeg"
+import room5 from "../assets/room-5.jpeg"
+import room2 from "../assets/room-2.jpeg"
+import room3 from "../assets/room-3.jpeg"
+import room4 from "../assets/room-4.jpeg"
+import room6 from "../assets/room-6.jpeg"
+import room8 from "../assets/room-8.jpeg"
+import room9 from "../assets/room-9.jpeg"
+import room10 from "../assets/room-10.jpeg"
 
 // Animation
 const fadeInUp = {
@@ -37,9 +46,15 @@ const stagger = {
 };
 
 const MOCK_ROOMS = [
-  { id: 1, type: "Single Sharing", price: "15,000", available: true, image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" },
-  { id: 2, type: "Double Sharing", price: "10,500", available: true, image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c" },
-  { id: 3, type: "Triple Sharing", price: "8,500", available: false, image: "https://images.unsplash.com/photo-1554995207-c18c203602cb" },
+  { id: 1, type: "Single Sharing", price: "13,000", available: true, image: room3 },
+  { id: 2, type: "Single Sharing", price: "13,000", available: true, image: room4 },
+  { id: 3, type: "Single Sharing", price: "13,000", available: true, image: room5 },
+  { id: 4, type: "Double Sharing", price: "7,500", available: true, image: room8 },
+  { id: 5, type: "Double Sharing", price: "7,500", available: true, image: room6 },
+  { id: 6, type: "Double Sharing", price: "7,500", available: true, image: room1 },
+  { id: 7, type: "Triple Sharing", price: "6,500", available: false, image: room2 },
+  { id: 8, type: "Triple Sharing", price: "6,500", available: false, image: room9 },
+  { id: 9, type: "Triple Sharing", price: "6,500", available: false, image: room10 },
 ];
 
 const Home = () => {
@@ -419,7 +434,7 @@ const Home = () => {
                 ${room.available 
                   ? "bg-green-500/80 text-white" 
                   : "bg-red-500/80 text-white"}`}>
-                {room.available ? "Available" : "Full"}
+                {room.available ? "Available" : "Available"}
               </span>
             </div>
 
