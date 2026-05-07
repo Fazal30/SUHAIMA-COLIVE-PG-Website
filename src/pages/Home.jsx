@@ -468,9 +468,9 @@ const Home = () => {
                   <span className="text-sm text-gray-400"> /month</span>
                 </span>
 
-                <button className="px-4 py-2 text-sm rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition">
+                <a href="/rooms" className="px-4 py-2 text-sm rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition">
                   View
-                </button>
+                </a>
               </div>
             </div>
 
