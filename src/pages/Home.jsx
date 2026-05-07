@@ -82,7 +82,6 @@ const Home = () => {
 
      <section className="relative h-screen flex items-center justify-center overflow-hidden">
 
-  {/* Background Image + Gradient Overlay */}
   <div className="absolute inset-0">
     <img
       src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
@@ -373,6 +372,8 @@ const Home = () => {
 
   </div>
 </section>
+
+{/* Menu */}
  <Menu />
 
       {/* ROOMS */}
