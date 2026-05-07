@@ -33,7 +33,7 @@ const Navbar = () => {
   ];
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/919620996689?text=Hi, I'm interested in booking a room at Suhaima Colive!", "_blank");
+    window.open("https://wa.me/919187200607?text=Hi, I'm interested in booking a room at Suhaima Colive!", "_blank");
   };
 
   return (
