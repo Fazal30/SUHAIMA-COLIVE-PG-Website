@@ -504,9 +504,13 @@ const Home = () => {
       transition={{ delay: 0.3 }}
       className="text-center mt-16"
     >
-      <button className="px-10 py-4 rounded-full text-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg hover:scale-105 transition">
-        Explore All Rooms
-      </button>
+     
+      <Button 
+            onClick={() => navigate("/rooms")}
+           className="px-10 py-4 rounded-full text-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg hover:scale-105 transition"
+          >
+            Explore All Rooms
+          </Button>
     </motion.div>
 
   </div>
