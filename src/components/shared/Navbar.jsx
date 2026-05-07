@@ -168,7 +168,7 @@ const Navbar = () => {
               <div className="mt-auto space-y-6">
                 <div className="h-[1px] w-full bg-white/10" />
                 <div className="grid grid-cols-2 gap-4">
-                  <a href="tel:+919620996689" className="flex flex-col items-center gap-3 p-6 rounded-3xl bg-white/5 border border-white/5 hover:bg-[#DAA520] hover:text-black transition-all group">
+                  <a href="tel:+919187200607" className="flex flex-col items-center gap-3 p-6 rounded-3xl bg-white/5 border border-white/5 hover:bg-[#DAA520] hover:text-black transition-all group">
                     <FaPhoneAlt size={20} className="text-[#DAA520] group-hover:text-black" />
                     <span className="text-[10px] font-black tracking-widest uppercase">Call</span>
                   </a>
