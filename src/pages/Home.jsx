@@ -11,12 +11,14 @@ import {
   FaClipboardCheck,
   FaKey,
   FaStar,
-  FaChevronDown 
+  FaChevronDown,
+  FaWhatsapp, FaArrowRight
 } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useNavigate } from "react-router-dom";
 
 import { Button } from "../components/ui/button";
 import FilterBar from "../components/common/FilterBar";
@@ -64,6 +66,12 @@ const MOCK_ROOMS = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/919187200607?text=Hi%20I%20am%20interested%20in%20SUHAIMA%20COLIVE%20PG", "_blank");
+  };
+
   const [filters, setFilters] = useState({
     type: "all",
     price: "all",
@@ -80,111 +88,119 @@ const Home = () => {
   return (
     <div className="bg-white text-slate-800 overflow-hidden">
 
-     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-
-  <div className="absolute inset-0">
-    <img
-      src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
-      className="w-full h-full object-cover scale-105 brightness-[0.35]"
-      alt="PG"
-    />
-    <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-indigo-900/40 to-purple-900/40"></div>
-  </div>
-
-  {/* Floating Blur Circles (Modern UI Effect) */}
-  <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl"></div>
-  <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
-
-  {/* Content */}
-  <div className="relative z-10 text-center px-4 max-w-5xl">
-
-    {/* Badge */}
-    <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white text-sm mb-6">
-      ⭐ Trusted by 100+ Residents
-    </div>
-
-    {/* Heading */}
-    <motion.h1
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="text-5xl md:text-8xl font-black text-white leading-[1.1]"
-    >
-      SUHAIMA <br />
-      <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-        COLIVE PG
-      </span>
-    </motion.h1>
-
-    {/* Subtitle */}
-    <motion.p
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-      className="text-lg md:text-2xl text-gray-300 mt-6 max-w-3xl mx-auto font-light leading-relaxed"
-    >
-      Experience premium co-living in Electronic City with fully furnished rooms, 
-      hygienic food, high-speed WiFi, and a vibrant community.
-    </motion.p>
-
-    {/* Buttons */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4 }}
-      className="mt-10 flex gap-5 justify-center flex-wrap"
-    >
-      <a
-    href="https://wa.me/919187200607?text=Hi%20I%20am%20interested%20in%20SUHAIMA%20COLIVE%20PG"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Button className="px-10 py-5 text-lg rounded-full bg-white text-black hover:scale-110 transition-all shadow-xl">
-      Book Your Room
-    </Button>
-  </a>
-  <a
-    href="/rooms"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Button className="px-10 py-5 text-lg rounded-full bg-white text-black hover:scale-110 transition-all shadow-xl">
-      Explore Rooms
-    </Button>
-  </a>
-    </motion.div>
-
-    {/* Stats Section */}
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.6 }}
-      className="mt-14 grid grid-cols-3 gap-6 max-w-2xl mx-auto"
-    >
-      <div className="bg-white/10 backdrop-blur-xl p-4 rounded-2xl border border-white/10">
-        <h3 className="text-2xl font-bold text-white">100+</h3>
-        <p className="text-sm text-gray-300">Happy Residents</p>
+     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#0A0C10]">
+      {/* Background Image with Parallax Scale */}
+      <div className="absolute inset-0 z-0">
+        <motion.img
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 10, ease: "easeOut" }}
+          src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
+          className="w-full h-full object-cover brightness-[0.25]"
+          alt="Suhaima Luxury PG"
+        />
+        {/* Luxury Gold Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0C10]/60 to-[#0A0C10]"></div>
       </div>
-      <div className="bg-white/10 backdrop-blur-xl p-4 rounded-2xl border border-white/10">
-        <h3 className="text-2xl font-bold text-white">4.8★</h3>
-        <p className="text-sm text-gray-300">Rating</p>
+
+      {/* Floating Gold Glow Effects */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-[#DAA520]/10 rounded-full blur-[120px] animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-[100px]"></div>
+
+      {/* Main Content */}
+      <div className="relative z-10 text-center px-4 max-w-6xl">
+        {/* Animated Badge */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 text-[#DAA520] text-xs font-black uppercase tracking-[0.2em] mb-8"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#DAA520] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#DAA520]"></span>
+          </span>
+          Trusted by 100+ Premium Residents
+        </motion.div>
+
+        {/* Heading with Gold Gradient */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-6xl md:text-[7.5rem] font-black text-white leading-[0.95] tracking-tighter"
+        >
+          SUHAIMA <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#DAA520] to-[#B8860B]">
+            COLIVE PG
+          </span>
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="text-lg md:text-xl text-slate-400 mt-8 max-w-2xl mx-auto font-medium leading-relaxed"
+        >
+          Redefining co-living in <span className="text-white">Electronic City</span>. 
+          Where luxury design meets a vibrant professional community.
+        </motion.p>
+
+        {/* Action Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mt-12 flex gap-4 justify-center flex-wrap"
+        >
+          {/* Navigate to WhatsApp */}
+          <Button 
+            onClick={handleWhatsApp}
+            className="group px-10 py-7 text-sm font-black uppercase tracking-widest rounded-2xl bg-[#DAA520] text-black hover:bg-white hover:scale-105 transition-all shadow-[0_20px_50px_rgba(218,165,32,0.3)]"
+          >
+            <FaWhatsapp className="mr-2 text-lg" /> Book Your Slot
+          </Button>
+
+          {/* Navigate to Rooms Page */}
+          <Button 
+            onClick={() => navigate("/rooms")}
+            className="group px-10 py-7 text-sm font-black uppercase tracking-widest rounded-2xl bg-white/5 text-white border border-white/10 backdrop-blur-xl hover:bg-white/10 hover:scale-105 transition-all"
+          >
+            Explore Rooms <FaArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
+          </Button>
+        </motion.div>
+
+        {/* Stats Section with Glassmorphism */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="mt-20 grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto border-t border-white/5 pt-12"
+        >
+          <div className="text-center">
+            <h3 className="text-2xl md:text-4xl font-black text-white">100+</h3>
+            <p className="text-[10px] uppercase tracking-widest text-[#DAA520] font-bold mt-1">Residents</p>
+          </div>
+          <div className="text-center border-x border-white/5">
+            <h3 className="text-2xl md:text-4xl font-black text-white">4.8★</h3>
+            <p className="text-[10px] uppercase tracking-widest text-[#DAA520] font-bold mt-1">Top Rated</p>
+          </div>
+          <div className="text-center">
+            <h3 className="text-2xl md:text-4xl font-black text-white">24/7</h3>
+            <p className="text-[10px] uppercase tracking-widest text-[#DAA520] font-bold mt-1">Support</p>
+          </div>
+        </motion.div>
       </div>
-      <div className="bg-white/10 backdrop-blur-xl p-4 rounded-2xl border border-white/10">
-        <h3 className="text-2xl font-bold text-white">24/7</h3>
-        <p className="text-sm text-gray-300">Support</p>
-      </div>
-    </motion.div>
 
-  </div>
-
-  {/* Scroll Indicator */}
-  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-    <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-      <div className="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
-    </div>
-  </div>
-
-     </section>
+      {/* Scroll Indicator */}
+      <motion.div 
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block"
+      >
+        <div className="w-[1px] h-20 bg-gradient-to-b from-[#DAA520] to-transparent"></div>
+      </motion.div>
+    </section>
 
       {/* HOW IT WORKS - PREMIUM VERSION */}
 <section className="py-28 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
@@ -468,15 +484,9 @@ const Home = () => {
                   <span className="text-sm text-gray-400"> /month</span>
                 </span>
 
-                <a
-    href="/rooms"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Button className="px-10 py-5 text-lg rounded-full bg-white text-black hover:scale-110 transition-all shadow-xl">
-      View
-    </Button>
-  </a>
+                <button className="px-4 py-2 text-sm rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition">
+                  View
+                </button>
               </div>
             </div>
 
