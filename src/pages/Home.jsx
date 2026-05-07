@@ -135,16 +135,24 @@ const Home = () => {
       transition={{ delay: 0.4 }}
       className="mt-10 flex gap-5 justify-center flex-wrap"
     >
-      <a href={`https://wa.me/919187200607?text=Hi, I'm interested in booking a room at Suhaima Colive!", "_blank`} className="px-10 py-5 text-lg rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 shadow-[0_10px_40px_rgba(99,102,241,0.5)] hover:scale-110 transition-all">
-        Book Your Stay
-      </a>
-
-      <a href="/rooms"
-        variant="outline"
-        className="px-10 py-5 text-lg rounded-full text-white border-white/30 bg-white/5 backdrop-blur-lg hover:bg-white/10 transition"
-      >
-        Explore Rooms
-      </a>
+      <a
+    href="https://wa.me/919187200607?text=Hi%20I%20am%20interested%20in%20SUHAIMA%20COLIVE%20PG"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button className="px-10 py-5 text-lg rounded-full bg-white text-black hover:scale-110 transition-all shadow-xl">
+      Book Your Room
+    </Button>
+  </a>
+  <a
+    href="/rooms"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button className="px-10 py-5 text-lg rounded-full bg-white text-black hover:scale-110 transition-all shadow-xl">
+      Explore Rooms
+    </Button>
+  </a>
     </motion.div>
 
     {/* Stats Section */}
