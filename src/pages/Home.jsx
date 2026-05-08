@@ -12,7 +12,7 @@ import {
   FaKey,
   FaStar,
   FaChevronDown,
-  FaWhatsapp, FaArrowRight
+  FaWhatsapp, FaArrowRight, FaQuoteLeft
 } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -40,6 +40,8 @@ import roof1 from "../assets/roof.jpeg"
 import roof2 from "../assets/roof2.jpeg"
 import Balcony from "../assets/balcony1.jpeg"
 import Balcony2 from "../assets/balcony2.jpeg"
+import stu from "../assets/stu-1.webp"
+import stu1 from "../assets/stu.jpg"
 import Gallery from "./Gallery";
 
 // Animation
@@ -71,6 +73,33 @@ const Home = () => {
   const handleWhatsApp = () => {
     window.open("https://wa.me/919187200607?text=Hi%20I%20am%20interested%20in%20SUHAIMA%20COLIVE%20PG", "_blank");
   };
+
+  const reviews = [
+    {
+      name: "Rahul Mishra",
+      image: stu,
+      review: "The best PG in Electronic City. The North Indian food reminds me of home, and the high-speed WiFi is perfect for my WFH setup.",
+      tag: "Verified Resident"
+    },
+    {
+      name: "Ananya Sharma",
+      image: "https://xsgames.co/randomusers/assets/avatars/female/24.jpg",
+      review: "Safety was my main concern, but Suhaima feels so secure. The rooms are spacious and the cleaning staff is very professional.",
+      tag: "Verified Resident"
+    },
+    {
+      name: "Satyam Mishra",
+      image: stu1,
+      review: "Value for money! The amenities like the rooftop gym and common area are top-notch. Highly recommended for professionals.",
+      tag: "Verified Resident"
+    },
+    {
+      name: "Priya Das",
+      image: "https://xsgames.co/randomusers/assets/avatars/female/3.jpg",
+      review: "Beautiful interiors and a very peaceful environment. The management is very responsive to any issues we face.",
+      tag: "Verified Resident"
+    }
+  ];
 
   const [filters, setFilters] = useState({
     type: "all",
@@ -522,95 +551,102 @@ const Home = () => {
       </section>
 
       {/* TESTIMONIALS */}
-<section className="relative py-32 bg-gradient-to-br from-gray-100 via-white to-indigo-100 overflow-hidden">
+<section className="relative py-24 bg-[#0A0C10] overflow-hidden">
+      {/* Decorative Background Glows */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#DAA520]/5 blur-[120px] rounded-full -z-0"></div>
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 blur-[100px] rounded-full -z-0"></div>
 
-  {/* Background Glow */}
-  <div className="absolute top-0 left-0 w-96 h-96 bg-purple-300/30 blur-3xl rounded-full -z-10"></div>
-  <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-300/30 blur-3xl rounded-full -z-10"></div>
+      <div className="container mx-auto px-6 relative z-10">
+        <SectionHeader 
+          title={<span>Voices of Our <span className="text-[#DAA520]">Community</span></span>} 
+          subtitle="Real experiences shared by our premium residents."
+          centered 
+        />
 
-  <div className="container mx-auto px-4">
-    <SectionHeader 
-      title="Loved by Our Residents" 
-      subtitle="Real stories from people living at Suhaima Colive PG"
-      centered 
-    />
+        <div className="mt-20">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            pagination={{ 
+              clickable: true,
+              dynamicBullets: true 
+            }}
+            className="pb-16 testimonial-swiper"
+          >
+            {reviews.map((t, i) => (
+              <SwiperSlide key={i} className="py-4">
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="relative h-full"
+                >
+                  {/* Luxury Glass Card */}
+                  <div className="h-full bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-10 flex flex-col shadow-2xl">
+                    
+                    {/* Top Section: Quote & Stars */}
+                    <div className="flex justify-between items-start mb-8">
+                      <div className="bg-[#DAA520]/10 p-3 rounded-2xl">
+                        <FaQuoteLeft className="text-[#DAA520] text-xl" />
+                      </div>
+                      <div className="flex text-[#DAA520] gap-1 bg-white/5 px-3 py-1.5 rounded-full">
+                        {[...Array(5)].map((_, index) => (
+                          <FaStar key={index} size={10} />
+                        ))}
+                      </div>
+                    </div>
 
-    <div className="mt-16">
-      <Swiper
-        modules={[Autoplay, Pagination]}
-        spaceBetween={30}
-        slidesPerView={1}
-        breakpoints={{
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-        autoplay={{ delay: 2500 }}
-        pagination={{ clickable: true }}
-      >
-        {[
-          {
-            name: "Rahul Kumar",
-            image: "https://randomuser.me/api/portraits/men/32.jpg",
-            review: "Amazing PG! Food, cleanliness, and environment are top-class.",
-          },
-          {
-            name: "Priya Sharma",
-            image: "https://randomuser.me/api/portraits/women/44.jpg",
-            review: "Feels like home. Very safe and comfortable for girls.",
-          },
-          {
-            name: "Aman Verma",
-            image: "https://randomuser.me/api/portraits/men/65.jpg",
-            review: "Best PG in Electronic City. Worth every rupee!",
-          },
-          {
-            name: "Sneha Patel",
-            image: "https://randomuser.me/api/portraits/women/68.jpg",
-            review: "Loved the community and facilities. Highly recommend!",
-          }
-        ].map((t, i) => (
-          <SwiperSlide key={i}>
-            <motion.div
-              whileHover={{ y: -12, scale: 1.02 }}
-              className="relative group"
-            >
-              {/* Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-xl opacity-0 group-hover:opacity-100 transition"></div>
+                    {/* Review Text */}
+                    <p className="text-slate-300 leading-relaxed italic mb-8 flex-grow">
+                      "{t.review}"
+                    </p>
 
-              {/* Card */}
-              <div className="relative bg-white/70 backdrop-blur-xl border border-white/30 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition">
+                    {/* Divider */}
+                    <div className="h-[1px] w-full bg-gradient-to-r from-[#DAA520]/40 to-transparent mb-8" />
 
-                {/* User */}
-                <div className="flex items-center gap-4 mb-5">
-                  <img
-                    src={t.image}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-indigo-500"
-                  />
-                  <div>
-                    <h4 className="font-bold text-lg">{t.name}</h4>
-                    <p className="text-sm text-gray-500">Resident</p>
+                    {/* User Profile */}
+                    <div className="flex items-center gap-4">
+                      <div className="relative">
+                        <img
+                          src={t.image}
+                          alt={t.name}
+                          className="w-14 h-14 rounded-2xl object-cover border border-white/20 shadow-lg"
+                        />
+                        <div className="absolute -bottom-1 -right-1 bg-green-500 border-2 border-[#0A0C10] w-4 h-4 rounded-full"></div>
+                      </div>
+                      <div>
+                        <h4 className="font-black text-white tracking-tight">{t.name}</h4>
+                        <div className="flex items-center gap-1.5 mt-0.5">
+                           <FaCheckCircle className="text-[#DAA520] text-[10px]" />
+                           <span className="text-[10px] uppercase tracking-widest text-[#DAA520] font-black">{t.tag}</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
 
-                {/* Stars */}
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-
-                {/* Review */}
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  “{t.review}”
-                </p>
-              </div>
-            </motion.div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  </div>
-</section>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .testimonial-swiper .swiper-pagination-bullet {
+          background: #DAA520 !important;
+          opacity: 0.3;
+        }
+        .testimonial-swiper .swiper-pagination-bullet-active {
+          opacity: 1;
+          width: 24px !important;
+          border-radius: 10px !important;
+        }
+      `}} />
+    </section>
       
       <section className="relative py-32 bg-gradient-to-br from-white via-indigo-50 to-purple-50 overflow-hidden">
 

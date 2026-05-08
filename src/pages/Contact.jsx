@@ -59,7 +59,7 @@ const Contact = () => {
           >
             <div className="bg-white/5 backdrop-blur-xl p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl">
               <h3 className="text-3xl font-black text-white mb-10 tracking-tight italic">
-                SUHAIMA <span className="text-[#DAA520]">COLIVE PG.</span>
+                SUHAIMA <span className="text-[#DAA520]">COLIVING PG.</span>
               </h3>
               
               <div className="space-y-10">

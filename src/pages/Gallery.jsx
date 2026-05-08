@@ -8,6 +8,7 @@ import room3 from "../assets/room-3.jpeg";
 import Washrooms from "../assets/bathroom.jpeg";
 import roof1 from "../assets/roof.jpeg";
 import roof2 from "../assets/roof2.jpeg";
+import roof3 from "../assets/roof3.jpeg";
 import Balcony from "../assets/balcony1.jpeg";
 import Balcony2 from "../assets/balcony2.jpeg";
 import room4 from "../assets/room-4.jpeg";
@@ -23,11 +24,9 @@ const Gallery = () => {
     { url: common, title: "Premium Lounge", category: "Common Area" },
     { url: room4, title: "Luxury Suite", category: "Bedrooms" },
     { url: Balcony, title: "Sunrise View", category: "Balcony" },
-    { url: Balcony2, title: "Outdoor Space", category: "Balcony" },
     { url: common1, title: "Working Zone", category: "Work" },
     { url: room3, title: "Single Room", category: "Bedrooms" },
-    { url: roof1, title: "Fitness Center", category: "Leisure" },
-    { url: roof2, title: "Sky Deck", category: "Leisure" },
+    { url: roof3, title: "Sky Deck", category: "Leisure" },
     { url: Washrooms, title: "Modern Washrooms", category: "Facilities" },
     { url: dinnerTable, title: "Modern Dinner Table", category: "Table" },
   ];

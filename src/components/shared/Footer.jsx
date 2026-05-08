@@ -124,6 +124,15 @@ const Footer = () => {
                   <p className="text-xs text-slate-500">+91 91872 00607</p>
                 </div>
               </a>
+              <a href="tel:+919187200608" className="flex items-center gap-4 group">
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex-shrink-0 flex items-center justify-center group-hover:text-[#DAA520] transition-colors">
+                  <FaPhoneAlt />
+                </div>
+                <div>
+                  <p className="text-white font-bold text-sm mb-1">Direct Call</p>
+                  <p className="text-xs text-slate-500">+91 91872 00608</p>
+                </div>
+              </a>
             </div>
           </motion.div>
 
@@ -134,9 +143,8 @@ const Footer = () => {
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-10 opacity-50">Location Map</h4>
             <div className="relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-2">
-               <div className="h-32 w-full bg-slate-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+               {/* <div className="h-32 w-full bg-slate-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
                   <img 
                     src="https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/77.6569,12.8330,14,0/400x200?access_token=YOUR_MAPBOX_TOKEN" 
                     alt="Location Preview"
@@ -151,7 +159,7 @@ const Footer = () => {
                       OPEN MAPS <FaExternalLinkAlt size={8}/>
                     </span>
                   </a>
-               </div>
+               </div> */}
                <div className="mt-6 px-2 pb-2">
                   <p className="text-xs font-bold mb-3 text-white uppercase tracking-wider">Stay Updated</p>
                   <div className="flex gap-2">
