@@ -183,7 +183,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-600 order-2 md:order-1">
-            © {currentYear} SUHAIMA COLIVE. Handcrafted for <span className="text-white">Premium Living</span>.
+            © {currentYear} SUHAIMA COLIVING. Handcrafted for <span className="text-white">Premium Living</span>.
           </div>
           
           {/* Bottom Bar Links - Manually Defined */}
