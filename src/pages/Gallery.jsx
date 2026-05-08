@@ -13,6 +13,7 @@ import Balcony2 from "../assets/balcony2.jpeg";
 import room4 from "../assets/room-4.jpeg";
 import common from "../assets/common.jpg";
 import common1 from "../assets/common1.jpg";
+import dinnerTable from "../assets/dinnertable.jpeg"
 
 const Gallery = () => {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -28,6 +29,7 @@ const Gallery = () => {
     { url: roof1, title: "Fitness Center", category: "Leisure" },
     { url: roof2, title: "Sky Deck", category: "Leisure" },
     { url: Washrooms, title: "Modern Washrooms", category: "Facilities" },
+    { url: dinnerTable, title: "Modern Dinner Table", category: "Table" },
   ];
 
   const categories = ["All", ...new Set(images.map((img) => img.category))];

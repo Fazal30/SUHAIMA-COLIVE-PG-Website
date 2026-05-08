@@ -131,7 +131,7 @@ const Home = () => {
         >
           SUHAIMA <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#DAA520] to-[#B8860B]">
-            COLIVE PG
+            COLIVING PG 
           </span>
         </motion.h1>
 
@@ -518,23 +518,6 @@ const Home = () => {
 
       {/* GALLERY */}
       <section className="py-28 container mx-auto px-4">
-        {/* <SectionHeader title="Gallery" subtitle="See your future home" centered />
-        <div className="grid md:grid-cols-4 gap-4 mt-12">
-          {[
-            Balcony,
-            Balcony2,
-            roof1,
-            roof2
-          ].map((img, i) => (
-            <motion.img
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              src={img}
-              className="rounded-2xl h-60 w-full object-cover"
-            />
-          ))}
-        </div> */}
-        
         <Gallery />
       </section>
 
