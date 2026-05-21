@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import SectionHeader from "../components/shared/SectionHeader";
 import { FaExpandAlt, FaTimes, FaArrowRight, FaShapes } from "react-icons/fa";
 
-// Keep your exact imports
 import room3 from "../assets/room-3.jpeg";
 import Washrooms from "../assets/bathroom.jpeg";
 import roof1 from "../assets/roof.jpeg";
@@ -41,7 +40,6 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-[#666666] py-24 relative overflow-hidden">
-      {/* --- ADVANCED BACKGROUND --- */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-[-10%] w-[50%] h-[50%] bg-[#DAA520]/5 blur-[120px] rounded-full animate-pulse" />
         <div className="absolute bottom-0 right-[-10%] w-[400px] h-[400px] bg-white/5 blur-[100px] rounded-full" />
