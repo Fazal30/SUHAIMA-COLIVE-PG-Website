@@ -15,20 +15,25 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle body scroll locking when mobile drawer is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+    return () => {
       document.body.style.overflow = "unset";
-    }
+    };
+  }, [isOpen]);
+
+  // Close mobile drawer on route navigation
+  useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [location.pathname]);
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Rooms", path: "/rooms" },
     { name: "Gallery", path: "/gallery" },
     { name: "Amenities", path: "/amenities" },
+    { name: "Menu", path: "/menu" },
     { name: "Contact", path: "/contact" },
   ];
 
