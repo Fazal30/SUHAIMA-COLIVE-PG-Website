@@ -35,7 +35,6 @@ const FaqSection = () => {
 
   return (
     <section className="relative py-28 bg-[#0D1017] text-white overflow-hidden border-t border-white/5">
-      {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#DAA520]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10 max-w-4xl">

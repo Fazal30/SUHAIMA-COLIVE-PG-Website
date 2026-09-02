@@ -39,7 +39,6 @@ const HowItWorksSection = () => {
         />
 
         <div className="relative mt-16 md:mt-20">
-          {/* Center Track Line (Desktop Only) */}
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#DAA520]/30 to-transparent -translate-y-1/2 pointer-events-none" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
@@ -53,24 +52,19 @@ const HowItWorksSection = () => {
                 whileHover={{ y: -8 }}
                 className="relative group text-center"
               >
-                {/* Step Number Backdrop */}
                 <div className="text-4xl md:text-5xl font-black text-white/5 group-hover:text-[#DAA520]/20 transition-colors mb-2">
                   0{i + 1}
                 </div>
 
-                {/* Card */}
                 <div className="relative p-6 sm:p-8 rounded-[2rem] bg-white/[0.03] backdrop-blur-xl border border-white/10 group-hover:border-[#DAA520]/40 group-hover:shadow-[0_20px_40px_rgba(218,165,32,0.1)] transition-all duration-300">
-                  {/* Icon */}
                   <div className="w-16 h-16 mx-auto flex items-center justify-center bg-gradient-to-br from-[#FFD700] via-[#DAA520] to-[#B8860B] text-black rounded-2xl shadow-lg mb-6 group-hover:scale-110 transition-transform">
                     <item.icon size={26} />
                   </div>
 
-                  {/* Title */}
                   <h3 className="text-lg md:text-xl font-bold mb-2 text-white group-hover:text-[#DAA520] transition-colors">
                     {item.title}
                   </h3>
 
-                  {/* Description */}
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
                     {item.desc}
                   </p>

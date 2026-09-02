@@ -17,14 +17,11 @@ const Rooms = () => {
 
   return (
     <div className="relative min-h-screen bg-[#0A0C10] text-white pt-24 pb-20 overflow-hidden">
-      {/* --- AMBIENT GLOW EFFECTS --- */}
       <div className="absolute top-10 left-[-10%] w-[550px] h-[550px] bg-[#DAA520]/10 rounded-full blur-[140px] pointer-events-none animate-pulse" />
       <div className="absolute top-1/2 right-[-10%] w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 left-1/4 w-[400px] h-[400px] bg-[#DAA520]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-6">
-        
-        {/* --- HEADER --- */}
         <div className="max-w-3xl mb-16 text-left">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -57,7 +54,6 @@ const Rooms = () => {
           </motion.p>
         </div>
 
-        {/* --- ROOM LISTINGS --- */}
         <div className="space-y-20 md:space-y-24">
           {ROOM_CATEGORIES.map((room, index) => {
             const currentImgIndex = activeImageIndex[room.id] || 0;
@@ -70,8 +66,6 @@ const Rooms = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center p-6 md:p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/10 hover:border-[#DAA520]/40 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(218,165,32,0.1)] backdrop-blur-xl group`}
               >
-                
-                {/* Visual Area (Main Image + Thumbnails) */}
                 <div className="w-full lg:w-3/5">
                   <div className="relative h-[280px] sm:h-[350px] md:h-[420px] w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
                     <AnimatePresence mode="wait">
@@ -87,10 +81,8 @@ const Rooms = () => {
                       />
                     </AnimatePresence>
 
-                    {/* Gradient Vignette */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
 
-                    {/* 360 Degree Indicator Overlay */}
                     <motion.div 
                       whileHover={{ scale: 1.05 }}
                       className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 border border-white/20 shadow-lg cursor-default"
@@ -99,7 +91,6 @@ const Rooms = () => {
                       <span className="text-[10px] font-extrabold tracking-wider uppercase text-slate-200">360° Preview</span>
                     </motion.div>
 
-                    {/* Pricing Badge */}
                     <motion.div 
                       whileHover={{ scale: 1.04, y: -2 }}
                       className="absolute bottom-5 left-5 bg-[#0A0C10]/85 backdrop-blur-xl border border-[#DAA520]/50 text-white px-5 py-3 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col transition-all"
@@ -112,7 +103,6 @@ const Rooms = () => {
                     </motion.div>
                   </div>
 
-                  {/* Thumbnails / Switcher */}
                   <div className="flex gap-3 mt-4 justify-center lg:justify-start">
                     {room.images.map((img, idx) => (
                       <motion.button 
@@ -132,7 +122,6 @@ const Rooms = () => {
                   </div>
                 </div>
 
-                {/* --- CONTENT AREA --- */}
                 <div className="w-full lg:w-2/5 space-y-6">
                   <div>
                     <div className="inline-flex items-center gap-2 text-[#DAA520] font-black text-xs tracking-widest uppercase mb-2">
@@ -146,7 +135,6 @@ const Rooms = () => {
                     </p>
                   </div>
 
-                  {/* Highlights / Badges */}
                   {room.highlights && (
                     <div className="flex flex-wrap gap-2">
                       {room.highlights.map((h, i) => (
@@ -157,7 +145,6 @@ const Rooms = () => {
                     </div>
                   )}
 
-                  {/* Amenities List */}
                   <div className="grid grid-cols-2 gap-2.5">
                     {room.amenities.slice(0, 4).map((item, i) => (
                       <motion.div 
@@ -171,7 +158,6 @@ const Rooms = () => {
                     ))}
                   </div>
 
-                  {/* Action Buttons */}
                   <div className="pt-2 flex flex-wrap gap-3">
                     <motion.button 
                       whileHover={{ scale: 1.04 }}
@@ -198,7 +184,6 @@ const Rooms = () => {
           })}
         </div>
 
-        {/* --- BOTTOM CTA --- */}
         <motion.div 
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 30 }}

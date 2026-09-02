@@ -28,7 +28,6 @@ const RoomDetails = () => {
   return (
     <div className="min-h-screen bg-[#0A0C10] text-white pt-28 pb-24">
       <div className="container mx-auto px-6">
-        {/* Back Button */}
         <button
           onClick={() => navigate("/rooms")}
           className="inline-flex items-center gap-2 text-slate-400 hover:text-[#DAA520] transition-colors mb-8 text-sm font-bold tracking-wider uppercase"
@@ -37,7 +36,6 @@ const RoomDetails = () => {
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-          {/* Left: Gallery & Info */}
           <div className="lg:col-span-2">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
@@ -67,7 +65,6 @@ const RoomDetails = () => {
 
               <p className="text-slate-300 leading-relaxed text-lg mb-10">{room.description}</p>
 
-              {/* Highlights */}
               {room.highlights && (
                 <div className="mb-10">
                   <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#DAA520] mb-4">Key Highlights</h3>
@@ -82,7 +79,6 @@ const RoomDetails = () => {
                 </div>
               )}
 
-              {/* Room Facilities */}
               <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#DAA520] mb-4">Included Facilities</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <AmenityIcon icon={FaWifi} label="Gigabit WiFi" />
@@ -93,7 +89,6 @@ const RoomDetails = () => {
             </div>
           </div>
 
-          {/* Right: Booking Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-28 p-8 rounded-[2.5rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-2xl">
               <div className="mb-6">

@@ -65,7 +65,6 @@ const Amenities = () => {
 
   return (
     <div className="min-h-screen bg-[#0A0C10] py-24 relative overflow-hidden">
-      {/* --- BACKGROUND BLOBS --- */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#DAA520]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -77,7 +76,6 @@ const Amenities = () => {
           dark
         />
 
-        {/* --- BENTO GRID (Main Features) --- */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -104,13 +102,11 @@ const Amenities = () => {
                 <p className="text-slate-400 leading-relaxed text-lg">{item.desc}</p>
               </div>
               
-              {/* Decorative Corner Icon */}
               <item.icon className="absolute -bottom-6 -right-6 text-9xl text-white/5 rotate-12 group-hover:text-[#DAA520]/10 transition-colors" />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* --- SECONDARY AMENITIES (Icon Grid) --- */}
         <div className="mt-24 pt-24 border-t border-white/5">
           <h4 className="text-[#DAA520] text-center font-bold tracking-[0.3em] uppercase mb-16">Standard Inclusions</h4>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -134,8 +130,6 @@ const Amenities = () => {
 
         <Menu />
 
-
-        {/* --- LIFESTYLE CALLOUT --- */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

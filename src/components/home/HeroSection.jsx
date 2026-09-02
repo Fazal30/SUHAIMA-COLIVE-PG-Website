@@ -12,7 +12,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#0A0C10]">
-      {/* Background Image with Parallax Scale */}
       <div className="absolute inset-0 z-0">
         <motion.img
           initial={{ scale: 1.2 }}
@@ -23,17 +22,13 @@ const HeroSection = () => {
           alt="Suhaima Luxury PG"
           loading="eager"
         />
-        {/* Luxury Gold Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0C10]/60 to-[#0A0C10]" />
       </div>
 
-      {/* Floating Gold Glow Effects */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-[#DAA520]/10 rounded-full blur-[120px] animate-pulse pointer-events-none" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Main Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl">
-        {/* Animated Badge */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +41,6 @@ const HeroSection = () => {
           Trusted by 100+ Premium Residents
         </motion.div>
 
-        {/* Heading with Gold Gradient */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,7 +53,6 @@ const HeroSection = () => {
           </span>
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -70,7 +63,6 @@ const HeroSection = () => {
           Where luxury design meets a vibrant professional community.
         </motion.p>
 
-        {/* Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -92,7 +84,6 @@ const HeroSection = () => {
           </Button>
         </motion.div>
 
-        {/* Stats Section with Glassmorphism */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -114,7 +105,6 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div 
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}

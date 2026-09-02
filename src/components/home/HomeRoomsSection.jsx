@@ -25,19 +25,15 @@ const HomeRoomsSection = () => {
 
   const filteredRooms = useMemo(() => {
     return MOCK_ROOMS.filter((room) => {
-      // Type filter
       if (filters.type !== "all" && !room.type.toLowerCase().includes(filters.type.toLowerCase())) {
         return false;
       }
-      // Price filter
       const priceNum = room.numericPrice || parseInt(room.price.replace(/,/g, ""), 10);
       if (filters.price === "low" && priceNum >= 10000) return false;
       if (filters.price === "mid" && (priceNum < 10000 || priceNum > 15000)) return false;
       if (filters.price === "high" && priceNum <= 15000) return false;
-      // AC filter
       if (filters.ac === "ac" && !room.hasAc) return false;
       if (filters.ac === "non-ac" && room.hasAc) return false;
-      // Status filter
       if (filters.status === "available" && !room.available) return false;
       if (filters.status === "booked" && room.available) return false;
 
@@ -47,11 +43,9 @@ const HomeRoomsSection = () => {
 
   return (
     <section className="relative py-28 bg-[#0D1017] text-white overflow-hidden border-t border-white/5">
-      {/* Background Ambient Glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#DAA520]/5 blur-3xl rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Header & Filter Row */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
           <SectionHeader 
             title={<span>Modern Living <span className="text-[#DAA520]">Spaces</span></span>} 
@@ -64,7 +58,6 @@ const HomeRoomsSection = () => {
           </div>
         </div>
 
-        {/* Room Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredRooms.length > 0 ? (
             filteredRooms.map((room, index) => (
@@ -77,7 +70,6 @@ const HomeRoomsSection = () => {
                 whileHover={{ y: -8 }}
                 className="group relative rounded-[2rem] bg-white/[0.02] border border-white/10 hover:border-[#DAA520]/40 overflow-hidden transition-all duration-300 shadow-xl"
               >
-                {/* Image */}
                 <div className="relative h-60 w-full overflow-hidden">
                   <img
                     src={room.image}
@@ -87,7 +79,6 @@ const HomeRoomsSection = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
 
-                  {/* Availability Badge */}
                   <span className={`absolute top-4 left-4 px-3 py-1 text-xs rounded-full font-bold backdrop-blur-md shadow-md ${
                     room.available 
                       ? "bg-emerald-500/80 text-white" 
@@ -97,7 +88,6 @@ const HomeRoomsSection = () => {
                   </span>
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#DAA520] transition-colors">
                     {room.type}
@@ -107,7 +97,6 @@ const HomeRoomsSection = () => {
                     Fully furnished with high-speed WiFi, attached bath, and housekeeping.
                   </p>
 
-                  {/* Price & Action */}
                   <div className="flex justify-between items-center pt-4 border-t border-white/5">
                     <div>
                       <span className="text-xs text-slate-400 block font-medium">Monthly Rent</span>
@@ -135,7 +124,6 @@ const HomeRoomsSection = () => {
           )}
         </div>
 
-        {/* View All Button */}
         <div className="text-center mt-16">
           <Button 
             onClick={() => navigate("/rooms")}

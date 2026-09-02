@@ -65,7 +65,6 @@ const Gallery = () => {
           />
         </motion.div>
 
-        {/* --- CATEGORY FILTER TABS --- */}
         <div className="flex flex-wrap justify-center gap-3 mt-12 mb-16">
           {CATEGORIES.map((cat) => (
             <button
@@ -82,7 +81,6 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* --- DYNAMIC MASONRY GRID --- */}
         <motion.div
           layout
           className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6"
@@ -99,7 +97,6 @@ const Gallery = () => {
                 className="relative group cursor-pointer break-inside-avoid rounded-[2rem] overflow-hidden border border-white/10 bg-[#161B22]"
                 onClick={() => setSelectedImg(item.url)}
               >
-                {/* Image Section */}
                 <div className="relative overflow-hidden">
                   <img
                     src={item.url}
@@ -107,7 +104,6 @@ const Gallery = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
-                  {/* Luxury Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-8">
                     <p className="text-[#DAA520] text-[10px] font-black uppercase tracking-[0.3em] mb-1">
                       {item.category}
@@ -120,7 +116,6 @@ const Gallery = () => {
                     </div>
                   </div>
 
-                  {/* Floating Icon on Hover */}
                   <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all scale-75 group-hover:scale-100">
                     <div className="bg-[#DAA520] p-3 rounded-2xl text-black shadow-xl">
                       <FaExpandAlt size={14} />
@@ -132,7 +127,6 @@ const Gallery = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* --- ENHANCED LIGHTBOX --- */}
         <AnimatePresence>
           {selectedImg && (
             <motion.div
@@ -172,7 +166,6 @@ const Gallery = () => {
           )}
         </AnimatePresence>
 
-        {/* --- PREMIUM BOTTOM SECTION --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

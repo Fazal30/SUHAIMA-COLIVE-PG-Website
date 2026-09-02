@@ -8,7 +8,6 @@ const HomeCtaSection = () => {
 
   return (
     <section className="relative py-24 md:py-28 bg-gradient-to-b from-[#0A0C10] via-[#12161F] to-[#0A0C10] text-white text-center overflow-hidden border-t border-white/5">
-      {/* Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#DAA520]/10 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-6 max-w-3xl">

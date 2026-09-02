@@ -38,7 +38,6 @@ const REVIEWS = [
 const TestimonialsSection = () => {
   return (
     <section className="relative py-28 bg-[#0A0C10] overflow-hidden text-white border-t border-white/5">
-      {/* Decorative Glows */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#DAA520]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 blur-[100px] rounded-full pointer-events-none" />
 
@@ -74,7 +73,6 @@ const TestimonialsSection = () => {
                   className="relative h-full flex flex-col justify-between bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-[#DAA520]/40 rounded-[2.5rem] p-6 sm:p-8 shadow-2xl transition-all duration-300"
                 >
                   <div>
-                    {/* Top: Quote Icon & Stars */}
                     <div className="flex justify-between items-center mb-6">
                       <div className="w-10 h-10 rounded-xl bg-[#DAA520]/10 flex items-center justify-center">
                         <FaQuoteLeft className="text-[#DAA520] text-sm" />
@@ -86,17 +84,14 @@ const TestimonialsSection = () => {
                       </div>
                     </div>
 
-                    {/* Review Text */}
                     <p className="text-slate-300 text-xs sm:text-sm leading-relaxed italic mb-6">
                       "{t.review}"
                     </p>
                   </div>
 
                   <div>
-                    {/* Divider */}
                     <div className="h-[1px] w-full bg-gradient-to-r from-[#DAA520]/30 to-transparent mb-5" />
 
-                    {/* User Profile */}
                     <div className="flex items-center gap-3.5">
                       <div className="relative">
                         <img

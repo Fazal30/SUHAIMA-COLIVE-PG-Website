@@ -8,16 +8,14 @@ import {
   FaArrowRight, FaWhatsapp, FaShieldAlt, FaStar
 } from "react-icons/fa";
 
-// Day name array matching weeklyMenu order (0 = Monday, 6 = Sunday)
 const DAY_NAMES = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const DAY_SHORT = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const getTodayIndex = () => {
-  const day = new Date().getDay(); // 0 is Sunday, 1 is Monday...
+  const day = new Date().getDay();
   return day === 0 ? 6 : day - 1;
 };
 
-// Determine active meal based on current local hour
 const getCurrentMeal = () => {
   const hour = new Date().getHours();
   if (hour >= 7 && hour < 11) return { name: "Breakfast", icon: FaClock, time: "8:00 - 9:30 AM" };
@@ -78,7 +76,6 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
           : "bg-white/[0.02] border-white/10 hover:border-white/20"
       }`}
     >
-      {/* --- DAY HEADER --- */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
         <div className="flex items-center gap-4">
           <div className={`w-12 h-12 rounded-2xl flex items-center justify-center font-black text-lg ${
@@ -106,7 +103,6 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
           </div>
         </div>
 
-        {/* Live Serving Badge if Today */}
         {isToday && currentMeal && (
           <motion.div 
             initial={{ scale: 0.9 }}
@@ -119,7 +115,6 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
         )}
       </div>
 
-      {/* --- MEAL CARDS GRID --- */}
       <div className={`grid grid-cols-1 ${activeMealTab === 'all' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 max-w-2xl mx-auto'} gap-6`}>
         {displayedMeals.map((meal) => {
           const isCurrentActiveMeal = isToday && currentMeal && currentMeal.name === meal.name;

@@ -89,14 +89,11 @@ const Contact = () => {
 
   return (
     <div className="relative min-h-screen bg-[#0A0C10] text-white pt-24 pb-20 overflow-hidden">
-      {/* --- AMBIENT GLOW & PARTICLES --- */}
       <div className="absolute top-10 right-[-10%] w-[600px] h-[600px] bg-[#DAA520]/10 blur-[160px] rounded-full pointer-events-none animate-pulse" />
       <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-[#DAA520]/5 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-6">
-        
-        {/* --- SECTION HEADER --- */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -118,17 +115,13 @@ const Contact = () => {
           />
         </div>
 
-        {/* --- MAIN GRID: CONTACT METHODS + INTERACTIVE FORM --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
-          {/* --- LEFT COLUMN: CONTACT CHANNELS --- */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 space-y-6"
           >
-            {/* Header Card */}
             <div className="p-8 rounded-[2.5rem] bg-white/[0.02] backdrop-blur-xl border border-white/10 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#DAA520]/10 rounded-full blur-2xl pointer-events-none" />
               
@@ -148,7 +141,6 @@ const Contact = () => {
                 Whether you're planning a relocation, scheduling a walkthrough, or asking about food options, we are available daily.
               </p>
 
-              {/* Channels List */}
               <div className="space-y-3">
                 {contactMethods.map((item, i) => (
                   <motion.a
@@ -182,7 +174,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Social Channels Strip */}
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Follow Our Community:</span>
               <div className="flex gap-3">
@@ -206,7 +197,6 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* --- RIGHT COLUMN: LUXURY INTERACTIVE INQUIRY FORM --- */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -214,7 +204,6 @@ const Contact = () => {
             className="lg:col-span-7"
           >
             <div className="p-8 sm:p-12 rounded-[2.5rem] bg-[#161B22]/90 backdrop-blur-2xl border border-white/10 shadow-[0_30px_70px_rgba(0,0,0,0.6)] relative overflow-hidden group">
-              {/* Decorative Corner Glow */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#DAA520]/15 rounded-full blur-3xl pointer-events-none" />
 
               <div className="relative z-10">
@@ -231,7 +220,6 @@ const Contact = () => {
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name & Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <label className="text-[11px] font-black uppercase tracking-widest text-slate-300 ml-1">
@@ -261,7 +249,6 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  {/* Room Preference with Quick Chips */}
                   <div className="space-y-2.5">
                     <div className="flex items-center justify-between">
                       <label className="text-[11px] font-black uppercase tracking-widest text-slate-300 ml-1">
@@ -270,7 +257,6 @@ const Contact = () => {
                       <span className="text-[10px] text-slate-500">Click a chip or type below</span>
                     </div>
 
-                    {/* Quick Selection Chips */}
                     <div className="flex flex-wrap gap-2 mb-2">
                       {roomQuickOptions.map((opt) => (
                         <button
@@ -296,7 +282,6 @@ const Contact = () => {
                     />
                   </div>
 
-                  {/* Message */}
                   <div className="space-y-2">
                     <label className="text-[11px] font-black uppercase tracking-widest text-slate-300 ml-1">
                       Your Message / Questions
@@ -309,7 +294,6 @@ const Contact = () => {
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <motion.button 
                     type="submit"
                     disabled={submitted}
@@ -332,7 +316,6 @@ const Contact = () => {
 
         </div>
 
-        {/* --- INTERACTIVE LOCATION MAP SECTION --- */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -349,7 +332,6 @@ const Contact = () => {
             loading="lazy"
           />
           
-          {/* Floating Location Overlay Card */}
           <div className="absolute bottom-6 left-6 right-6 md:right-auto max-w-xl bg-black/85 backdrop-blur-xl p-6 rounded-[2rem] border border-white/15 shadow-2xl flex flex-col sm:flex-row items-center gap-4">
             <div className="w-12 h-12 bg-[#DAA520] rounded-2xl flex items-center justify-center shrink-0 shadow-lg">
               <FaMapMarkerAlt className="text-black text-xl animate-bounce" />
