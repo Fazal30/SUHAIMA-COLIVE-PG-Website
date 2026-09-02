@@ -23,10 +23,12 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  // Close mobile drawer on route navigation
-  useEffect(() => {
+  // Adjust state during render when location changes (React recommended pattern without cascading effects)
+  const [prevPath, setPrevPath] = useState(location.pathname);
+  if (prevPath !== location.pathname) {
+    setPrevPath(location.pathname);
     setIsOpen(false);
-  }, [location.pathname]);
+  }
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -160,6 +162,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={link.path}
+                      onClick={() => setIsOpen(false)}
                       className={`text-4xl font-black tracking-tighter transition-colors ${
                         location.pathname === link.path ? "text-[#DAA520]" : "text-white"
                       }`}
