@@ -131,7 +131,6 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
                   : "border-white/10 hover:border-[#DAA520]/50 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
               } bg-[#161B22]`}
             >
-              {/* Photo Background Layer with Zoom */}
               <div className="relative h-48 sm:h-52 w-full overflow-hidden">
                 <img 
                   src={meal.data.img} 
@@ -139,10 +138,8 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 brightness-[0.7] group-hover:brightness-[0.85]" 
                 />
 
-                {/* Shimmer light sweep */}
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
 
-                {/* Top Overlay Badges */}
                 <div className="absolute top-3 left-3 right-3 flex justify-between items-center z-10">
                   <div className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 flex items-center gap-2 text-white">
                     <meal.icon className="text-[#DAA520] text-xs" />
@@ -158,7 +155,6 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
                   </span>
                 </div>
 
-                {/* Meal Title on Image */}
                 <div className="absolute bottom-3 left-4 right-4 z-10 flex items-center justify-between">
                   <h4 className="text-xl sm:text-2xl font-black text-white tracking-tight uppercase drop-shadow-md">
                     {meal.name}
@@ -173,7 +169,6 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#161B22] via-black/30 to-transparent pointer-events-none" />
               </div>
 
-              {/* Menu Content */}
               <div className="p-5 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-3">
@@ -183,7 +178,6 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
                     <div className="h-[1px] flex-1 bg-white/10" />
                   </div>
 
-                  {/* Dish item pills */}
                   <div className="flex flex-wrap gap-2">
                     {itemsList.map((dish, dIdx) => (
                       <span 
@@ -196,7 +190,6 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
                   </div>
                 </div>
 
-                {/* Bottom Status / Quality Indicator */}
                 <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase tracking-wider">
                   <span className="flex items-center gap-1.5 text-emerald-400">
                     <FaCheckCircle className="text-xs" /> Unlimited Servings
@@ -216,7 +209,7 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab, dayIndex }) => {
 const Menu = () => {
   const todayIndex = getTodayIndex();
   const [activeMealTab, setActiveMealTab] = useState("all");
-  const [selectedDayFilter, setSelectedDayFilter] = useState("all"); // 'all' or day index 0..6
+  const [selectedDayFilter, setSelectedDayFilter] = useState("all");
 
   const filterButtons = [
     { id: "all", label: "Full Day", icon: FaCalendarDay },
@@ -239,14 +232,11 @@ const Menu = () => {
 
   return (
     <div className="relative min-h-screen bg-[#0A0C10] text-white py-24 overflow-hidden">
-      {/* --- AMBIENT GLOW EFFECTS & PARTICLES --- */}
       <div className="absolute top-10 left-[-10%] w-[600px] h-[600px] bg-[#DAA520]/10 blur-[150px] rounded-full pointer-events-none animate-pulse" />
       <div className="absolute top-1/2 right-[-10%] w-[500px] h-[500px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
       <div className="absolute bottom-20 left-1/3 w-[450px] h-[450px] bg-[#DAA520]/5 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-6">
-        
-        {/* --- SECTION HEADER --- */}
         <div className="flex flex-col items-center mb-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -264,7 +254,6 @@ const Menu = () => {
             dark
           />
 
-          {/* --- QUICK SHORTCUT TO TODAY --- */}
           <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -293,7 +282,6 @@ const Menu = () => {
             )}
           </div>
 
-          {/* --- WEEKDAY SELECTOR TABS --- */}
           <div className="flex flex-wrap justify-center gap-2 bg-white/5 p-2 rounded-2xl border border-white/10 backdrop-blur-xl mt-8 max-w-2xl w-full">
             <button
               onClick={() => setSelectedDayFilter("all")}
@@ -329,7 +317,6 @@ const Menu = () => {
             })}
           </div>
 
-          {/* --- MEAL FILTER TABS (Breakfast / Lunch / Dinner) --- */}
           <div className="flex flex-wrap justify-center gap-2 bg-black/40 p-1.5 rounded-full border border-white/10 backdrop-blur-xl mt-4">
             {filterButtons.map((btn) => (
               <motion.button
@@ -349,7 +336,6 @@ const Menu = () => {
           </div>
         </div>
 
-        {/* --- MENU LISTINGS --- */}
         <div className="space-y-12">
           <AnimatePresence mode="wait">
             {displayedMenu.map((dayMenu) => {
@@ -367,7 +353,6 @@ const Menu = () => {
           </AnimatePresence>
         </div>
 
-        {/* --- HYGIENE & NUTRITION ASSURANCE CARDS --- */}
         <div className="mt-24 pt-16 border-t border-white/10">
           <div className="text-center max-w-xl mx-auto mb-12">
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#DAA520]">
@@ -411,7 +396,6 @@ const Menu = () => {
           </div>
         </div>
 
-        {/* --- BOTTOM DINING CTA --- */}
         <motion.div 
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 30 }}

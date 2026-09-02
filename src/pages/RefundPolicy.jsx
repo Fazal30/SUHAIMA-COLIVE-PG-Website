@@ -87,13 +87,10 @@ const RefundPolicy = () => {
 
   return (
     <div className="relative min-h-screen bg-[#0A0C10] text-slate-300 pt-24 pb-20 overflow-hidden">
-      {/* --- AMBIENT GLOW EFFECTS --- */}
       <div className="absolute top-10 left-[-10%] w-[550px] h-[550px] bg-[#DAA520]/10 rounded-full blur-[150px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-10 right-[-10%] w-[500px] h-[500px] bg-white/5 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-6 max-w-5xl">
-        
-        {/* --- SECTION HEADER --- */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -116,7 +113,6 @@ const RefundPolicy = () => {
           </p>
         </div>
 
-        {/* --- 4-STEP REFUND WORKFLOW --- */}
         <div className="mb-20">
           <div className="text-center mb-10">
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#DAA520]">
@@ -152,7 +148,6 @@ const RefundPolicy = () => {
           </div>
         </div>
 
-        {/* --- CORE POLICIES GRID --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {POLICIES.map((card, i) => (
             <motion.div 
@@ -165,7 +160,6 @@ const RefundPolicy = () => {
               className="p-8 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-[#DAA520]/50 hover:shadow-[0_20px_40px_rgba(218,165,32,0.1)] transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Icon & Tag */}
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-[#DAA520]/10 border border-[#DAA520]/30 flex items-center justify-center text-[#DAA520] text-xl">
                     <card.icon />
@@ -175,7 +169,6 @@ const RefundPolicy = () => {
                   </span>
                 </div>
 
-                {/* Title & Desc */}
                 <h4 className="text-xl font-black text-white mb-3 tracking-tight">
                   {card.title}
                 </h4>
@@ -183,7 +176,6 @@ const RefundPolicy = () => {
                   {card.desc}
                 </p>
 
-                {/* Bullet Points */}
                 <div className="space-y-2.5 pt-4 border-t border-white/5">
                   {card.bulletPoints.map((pt, pIdx) => (
                     <div key={pIdx} className="flex items-start gap-2.5 text-xs text-slate-300 leading-relaxed">
@@ -197,7 +189,6 @@ const RefundPolicy = () => {
           ))}
         </div>
 
-        {/* --- CLEARANCE NOTICE BOX --- */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -215,7 +206,6 @@ const RefundPolicy = () => {
           </div>
         </motion.div>
 
-        {/* --- BOTTOM CTA --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

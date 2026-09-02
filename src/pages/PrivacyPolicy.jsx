@@ -100,13 +100,10 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="relative min-h-screen bg-[#0A0C10] text-slate-300 pt-24 pb-20 overflow-hidden">
-      {/* --- AMBIENT GLOW EFFECTS --- */}
       <div className="absolute top-10 left-[-10%] w-[550px] h-[550px] bg-[#DAA520]/10 rounded-full blur-[150px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-10 right-[-10%] w-[500px] h-[500px] bg-white/5 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-6 max-w-5xl">
-        
-        {/* --- HEADER --- */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -129,7 +126,6 @@ const PrivacyPolicy = () => {
           </p>
         </div>
 
-        {/* --- RESPONSIVE QUICK NAVIGATION TABS --- */}
         <div className="flex flex-wrap justify-center gap-2 mb-12 bg-white/5 p-2 rounded-2xl border border-white/10 backdrop-blur-xl">
           <button
             onClick={() => setActiveSection("all")}
@@ -160,7 +156,6 @@ const PrivacyPolicy = () => {
           ))}
         </div>
 
-        {/* --- SECTIONS ACCORDION & CARDS --- */}
         <div className="space-y-6">
           {SECTIONS.map((section, idx) => {
             const isExpanded = expandedIndex === idx || activeSection === section.id;
@@ -178,7 +173,6 @@ const PrivacyPolicy = () => {
                     : "bg-white/[0.02] border-white/10 hover:border-white/20"
                 }`}
               >
-                {/* Header Row */}
                 <button
                   onClick={() => toggleAccordion(idx)}
                   className="w-full p-6 sm:p-8 flex items-start sm:items-center justify-between gap-4 text-left cursor-pointer select-none"
@@ -211,7 +205,6 @@ const PrivacyPolicy = () => {
                   </motion.div>
                 </button>
 
-                {/* Expanded Details */}
                 <AnimatePresence>
                   {isExpanded && (
                     <motion.div
@@ -237,7 +230,6 @@ const PrivacyPolicy = () => {
           })}
         </div>
 
-        {/* --- BOTTOM HELP CTA --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

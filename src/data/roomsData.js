@@ -101,11 +101,9 @@ export const MOCK_ROOMS = [
 export const getRoomById = (id) => {
   const numericId = parseInt(id, 10);
   
-  // First check categories
   const categoryMatch = ROOM_CATEGORIES.find((r) => r.id === numericId);
   if (categoryMatch) return categoryMatch;
 
-  // Then check mock room listing and synthesize
   const mockMatch = MOCK_ROOMS.find((r) => r.id === numericId);
   if (mockMatch) {
     const parentCategory = ROOM_CATEGORIES.find((c) => c.sharing === mockMatch.sharing) || ROOM_CATEGORIES[0];
@@ -121,6 +119,6 @@ export const getRoomById = (id) => {
     };
   }
 
-  // Fallback to primary room
   return ROOM_CATEGORIES[0];
 };
+
