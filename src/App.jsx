@@ -1,12 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
-// Layout & Shared
 import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
 import PageWrapper from "./components/shared/PageWrapper";
 
-// Pages
 import Home from "./pages/Home";
 import RoomDetails from "./pages/RoomDetails";
 import Gallery from "./pages/Gallery";
@@ -19,7 +17,6 @@ import TermsOfService from "./pages/TermsOfService";
 import RefundPolicy from "./pages/RefundPolicy";
 import Menu from "./pages/Menu";
 
-// Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect (() => { window.scrollTo(0, 0); }, [pathname]);
