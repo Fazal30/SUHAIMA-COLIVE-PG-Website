@@ -24,27 +24,22 @@ export const BrandIcon = ({ className = "w-9 h-9" }) => (
       </filter>
     </defs>
 
-    {/* Luxury Rounded Shield Frame */}
     <rect width="64" height="64" rx="18" fill="url(#brandDark)" />
     <rect width="62" height="62" x="1" y="1" rx="17" stroke="url(#brandGold)" strokeWidth="1.5" strokeOpacity="0.4" />
 
-    {/* Apex Crown / Roof Dome */}
     <path d="M32 9 L34 13 L30 13 Z" fill="url(#brandGold)" />
     <path d="M26 14 C26 12 38 12 38 14 L41 17 C38 18 26 18 23 17 Z" fill="url(#brandGold)" />
 
-    {/* Architectural Silhouette Backing */}
     <path d="M29 20 L35 20 L35 34 L29 34 Z" fill="url(#brandGold)" opacity="0.35" />
     <path d="M35 24 L40 24 L40 38 L35 38 Z" fill="url(#brandGold)" opacity="0.25" />
     <path d="M24 26 L29 26 L29 42 L24 42 Z" fill="url(#brandGold)" opacity="0.25" />
 
-    {/* Polished "S" Monogram */}
     <path 
       d="M41 22 C37 19 26 19 23 24 C20 28 22 33 28 35 L36 38 C42 40 44 45 41 50 C38 55 27 55 22 52 L21 47 C25 50 35 51 37 46 C39 42 37 39 32 37 L25 34 C19 32 17 26 21 21 C25 15 37 15 42 18 Z" 
       fill="url(#brandGold)" 
       filter="url(#iconGlow)" 
     />
 
-    {/* Base Plinth */}
     <rect x="22" y="53.5" width="20" height="2" rx="1" fill="url(#brandGold)" opacity="0.8" />
   </svg>
 );

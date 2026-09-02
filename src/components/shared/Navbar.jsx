@@ -16,7 +16,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle body scroll locking when mobile drawer is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
     return () => {
@@ -24,7 +23,6 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  // Adjust state during render when location changes (React recommended pattern without cascading effects)
   const [prevPath, setPrevPath] = useState(location.pathname);
   if (prevPath !== location.pathname) {
     setPrevPath(location.pathname);
@@ -53,13 +51,10 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6 lg:px-12">
-        
-        {/* --- BRAND LOGO --- */}
         <Link to="/" className="relative group">
           <BrandLogo />
         </Link>
 
-        {/* --- DESKTOP MENU --- */}
         <div className="hidden lg:flex items-center gap-10">
           <div className="flex gap-8 items-center">
             {navLinks.map((link) => (
@@ -73,7 +68,6 @@ const Navbar = () => {
                 }`}>
                   {link.name}
                 </span>
-                {/* Underline Animation */}
                 <span className={`absolute -bottom-2 left-1/2 w-0 h-0.5 bg-[#DAA520] transition-all duration-300 -translate-x-1/2 group-hover:w-full ${
                   location.pathname === link.path ? "w-full" : ""
                 }`} />
@@ -102,7 +96,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* --- MOBILE TOGGLE WITH ANIMATED ICON --- */}
         <motion.button 
           whileTap={{ scale: 0.9 }}
           className="lg:hidden w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white shadow-xl"
@@ -112,11 +105,9 @@ const Navbar = () => {
         </motion.button>
       </div>
 
-      {/* --- MOBILE FULLSCREEN DRAWER --- */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop Blur */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

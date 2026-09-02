@@ -11,7 +11,6 @@ import { Button } from "../ui/button";
 
 const FilterBar = ({ onFilterChange }) => {
   
-  // Safe wrapper to prevent "is not a function" errors
   const handleChange = (key, val) => {
     if (typeof onFilterChange === "function") {
       onFilterChange(key, val);
@@ -27,14 +26,11 @@ const FilterBar = ({ onFilterChange }) => {
       className="relative z-20 w-full mb-12"
     >
       <div className="flex flex-wrap items-center gap-4 bg-[#0A0C10] p-6 rounded-[2.5rem] border border-white/10 shadow-2xl backdrop-blur-xl">
-        
-        {/* Label Icon */}
         <div className="flex items-center gap-3 px-4 border-r border-white/10 mr-2">
           <FaFilter className="text-[#DAA520]" />
           <span className="font-bold text-white text-sm uppercase tracking-widest">Refine</span>
         </div>
 
-        {/* 1. Room Type Filter */}
         <div className="flex-1 min-w-[160px]">
           <Select onValueChange={(val) => handleChange("type", val)}>
             <SelectTrigger className="bg-white/5 border-white/10 text-slate-300 rounded-xl focus:ring-[#DAA520]">
@@ -49,7 +45,6 @@ const FilterBar = ({ onFilterChange }) => {
           </Select>
         </div>
 
-        {/* 2. Budget Filter */}
         <div className="flex-1 min-w-[160px]">
           <Select onValueChange={(val) => handleChange("price", val)}>
             <SelectTrigger className="bg-white/5 border-white/10 text-slate-300 rounded-xl">
@@ -64,7 +59,6 @@ const FilterBar = ({ onFilterChange }) => {
           </Select>
         </div>
 
-        {/* 3. AC Preference */}
         <div className="flex-1 min-w-[160px]">
           <Select onValueChange={(val) => handleChange("ac", val)}>
             <SelectTrigger className="bg-white/5 border-white/10 text-slate-300 rounded-xl">
@@ -78,7 +72,6 @@ const FilterBar = ({ onFilterChange }) => {
           </Select>
         </div>
 
-        {/* 4. Availability Toggle */}
         <div className="flex-1 min-w-[160px]">
           <Select onValueChange={(val) => handleChange("status", val)}>
             <SelectTrigger className="bg-white/5 border-white/10 text-slate-300 rounded-xl">
@@ -92,21 +85,19 @@ const FilterBar = ({ onFilterChange }) => {
           </Select>
         </div>
 
-        {/* Reset Button */}
-       <Button 
-  variant="ghost" 
-  onClick={() => {
-    // Manually trigger a reset for all keys if your Home.jsx supports it
-    handleChange("type", "all");
-    handleChange("price", "all");
-    handleChange("ac", "all");
-    handleChange("status", "all");
-  }}
-  className="text-slate-400 hover:text-[#DAA520] hover:bg-white/5 rounded-xl px-4"
->
-  <FaRedoAlt className="mr-2 text-xs" />
-  Reset
-</Button>
+        <Button 
+          variant="ghost" 
+          onClick={() => {
+            handleChange("type", "all");
+            handleChange("price", "all");
+            handleChange("ac", "all");
+            handleChange("status", "all");
+          }}
+          className="text-slate-400 hover:text-[#DAA520] hover:bg-white/5 rounded-xl px-4"
+        >
+          <FaRedoAlt className="mr-2 text-xs" />
+          Reset
+        </Button>
 
       </div>
     </motion.div>
