@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaWhatsapp, FaBars, FaTimes, FaPhoneAlt } from "react-icons/fa";
 import { Button } from "../ui/button";
+import BrandLogo from "../common/BrandLogo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,20 +54,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-6 lg:px-12">
         
-        {/* --- LOGO WITH PULSE EFFECT --- */}
+        {/* --- BRAND LOGO --- */}
         <Link to="/" className="relative group">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl md:text-3xl font-black tracking-tighter text-white"
-          >
-            SUHAIMA<span className="text-[#DAA520]">.</span>
-          </motion.div>
-          <motion.div 
-            className="absolute -bottom-1 left-0 h-0.5 bg-[#DAA520]"
-            initial={{ width: 0 }}
-            whileHover={{ width: "100%" }}
-            transition={{ duration: 0.3 }}
-          />
+          <BrandLogo />
         </Link>
 
         {/* --- DESKTOP MENU --- */}
@@ -143,7 +133,7 @@ const Navbar = () => {
               className="fixed right-0 top-0 h-screen w-[85%] max-w-[400px] bg-[#0A0C10] shadow-[-20px_0_50px_rgba(0,0,0,0.5)] z-[110] p-10 flex flex-col lg:hidden border-l border-white/5"
             >
               <div className="flex justify-between items-center mb-16">
-                <span className="text-2xl font-black text-white italic">SUHAIMA<span className="text-[#DAA520]">.</span></span>
+                <BrandLogo />
                 <button 
                   onClick={() => setIsOpen(false)} 
                   className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white"

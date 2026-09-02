@@ -6,6 +6,7 @@ import {
 } from "react-icons/fa";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import BrandLogo from "../common/BrandLogo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -33,9 +34,9 @@ const Footer = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-white text-3xl font-black tracking-tighter mb-4">
-                SUHAIMA<span className="text-[#DAA520]">.</span>
-              </h3>
+              <div className="mb-4">
+                <BrandLogo />
+              </div>
               <p className="text-sm leading-relaxed text-slate-500">
                 Redefining luxury coliving in Bangalore. We provide premium, tech-enabled managed spaces for the modern professional who values community and comfort.
               </p>
