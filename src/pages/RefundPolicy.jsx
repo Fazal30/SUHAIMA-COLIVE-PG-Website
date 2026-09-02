@@ -10,6 +10,7 @@ const RefundPolicy = () => {
           title={<span>Refund <span className="text-[#DAA520]">Policy</span></span>} 
           subtitle="Fairness and transparency in every transaction." 
           centered
+          dark
         />
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">

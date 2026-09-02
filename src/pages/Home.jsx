@@ -22,27 +22,13 @@ import { useNavigate } from "react-router-dom";
 
 import { Button } from "../components/ui/button";
 import FilterBar from "../components/common/FilterBar";
-import RoomCard from "../components/common/RoomCard";
 import SectionHeader from "../components/shared/SectionHeader";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Menu from "./Menu";
-import room1 from "../assets/room-1.jpeg"
-import room5 from "../assets/room-5.jpeg"
-import room2 from "../assets/room-2.jpeg"
-import room3 from "../assets/room-3.jpeg"
-import room4 from "../assets/room-4.jpeg"
-import room6 from "../assets/room-6.jpeg"
-import room8 from "../assets/room-8.jpeg"
-import room9 from "../assets/room-9.jpeg"
-import room10 from "../assets/room-10.jpeg"
-import Washrooms from "../assets/bathroom.jpeg"
-import roof1 from "../assets/roof.jpeg"
-import roof2 from "../assets/roof2.jpeg"
-import Balcony from "../assets/balcony1.jpeg"
-import Balcony2 from "../assets/balcony2.jpeg"
-import stu from "../assets/stu-1.webp"
-import stu1 from "../assets/stu.jpg"
+import stu from "../assets/stu-1.webp";
+import stu1 from "../assets/stu.jpg";
 import Gallery from "./Gallery";
+import { MOCK_ROOMS } from "../data/roomsData";
 
 // Animation
 const fadeInUp = {
@@ -54,18 +40,6 @@ const fadeInUp = {
 const stagger = {
   whileInView: { transition: { staggerChildren: 0.15 } }
 };
-
-const MOCK_ROOMS = [
-  { id: 1, type: "Single Sharing", price: "13,000", available: true, image: room3 },
-  { id: 2, type: "Single Sharing", price: "13,000", available: true, image: room4 },
-  { id: 3, type: "Single Sharing", price: "13,000", available: true, image: room5 },
-  { id: 4, type: "Double Sharing", price: "7,500", available: true, image: room8 },
-  { id: 5, type: "Double Sharing", price: "7,500", available: true, image: room6 },
-  { id: 6, type: "Double Sharing", price: "7,500", available: true, image: room1 },
-  { id: 7, type: "Triple Sharing", price: "6,500", available: false, image: room2 },
-  { id: 8, type: "Triple Sharing", price: "6,500", available: false, image: room9 },
-  { id: 9, type: "Triple Sharing", price: "6,500", available: false, image: room10 },
-];
 
 const Home = () => {
   const navigate = useNavigate();
@@ -108,12 +82,37 @@ const Home = () => {
     status: "all",
   });
 
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+
   const handleFilter = (key, val) => {
     setFilters((prev) => ({
       ...prev,
       [key]: val,
     }));
-  }
+  };
+
+  const filteredRooms = useMemo(() => {
+    return MOCK_ROOMS.filter((room) => {
+      // Type filter: single, double, triple
+      if (filters.type !== "all" && !room.type.toLowerCase().includes(filters.type.toLowerCase())) {
+        return false;
+      }
+      // Price filter
+      const priceNum = room.numericPrice || parseInt(room.price.replace(/,/g, ""), 10);
+      if (filters.price === "low" && priceNum >= 10000) return false;
+      if (filters.price === "mid" && (priceNum < 10000 || priceNum > 15000)) return false;
+      if (filters.price === "high" && priceNum <= 15000) return false;
+      // AC filter
+      if (filters.ac === "ac" && !room.hasAc) return false;
+      if (filters.ac === "non-ac" && room.hasAc) return false;
+      // Status filter
+      if (filters.status === "available" && !room.available) return false;
+      if (filters.status === "booked" && room.available) return false;
+
+      return true;
+    });
+  }, [filters]);
+
   return (
     <div className="bg-white text-slate-800 overflow-hidden">
 
@@ -464,66 +463,74 @@ const Home = () => {
       }}
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16"
     >
-      {MOCK_ROOMS.map((room) => (
-        <motion.div
-          key={room.id}
-          variants={{
-            hidden: { opacity: 0, y: 60 },
-            visible: { opacity: 1, y: 0 }
-          }}
-          whileHover={{ y: -10, scale: 1.03 }}
-          transition={{ type: "spring", stiffness: 120 }}
-          className="relative group"
-        >
-          {/* Glow Effect */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 blur-xl transition duration-500"></div>
-
-          {/* Card */}
-          <div className="relative z-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100">
-            
-            {/* Image */}
-            <div className="relative overflow-hidden">
-              <img
-                src={room.image}
-                alt={room.type}
-                className="w-full h-60 object-cover group-hover:scale-110 transition duration-700"
-              />
-
-              {/* Availability Badge */}
-              <span className={`absolute top-4 left-4 px-3 py-1 text-xs rounded-full font-semibold backdrop-blur-md
-                ${room.available 
-                  ? "bg-green-500/80 text-white" 
-                  : "bg-red-500/80 text-white"}`}>
-                {room.available ? "Available" : "Available"}
-              </span>
-            </div>
-
-            {/* Content */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">{room.type}</h3>
-
-              <p className="text-gray-500 text-sm mb-4">
-                Fully furnished room with premium amenities and comfort.
-              </p>
-
-              {/* Price */}
-              <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-indigo-600">
-                  ₹{room.price}
-                  <span className="text-sm text-gray-400"> /month</span>
-                </span>
-                 <Button 
-            onClick={() => navigate("/rooms")}
-           className="px-4 py-2 text-sm rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition"
+      {filteredRooms.length > 0 ? (
+        filteredRooms.map((room) => (
+          <motion.div
+            key={room.id}
+            variants={{
+              hidden: { opacity: 0, y: 60 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            whileHover={{ y: -10, scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 120 }}
+            className="relative group"
           >
-            View
-          </Button>
-              </div>
-            </div>
+            {/* Glow Effect */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 blur-xl transition duration-500"></div>
 
-          </div>
-        </motion.div>
-      ))}
+            {/* Card */}
+            <div className="relative z-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100">
+              
+              {/* Image */}
+              <div className="relative overflow-hidden">
+                <img
+                  src={room.image}
+                  alt={room.type}
+                  className="w-full h-60 object-cover group-hover:scale-110 transition duration-700"
+                />
+
+                {/* Availability Badge */}
+                <span className={`absolute top-4 left-4 px-3 py-1 text-xs rounded-full font-semibold backdrop-blur-md ${
+                  room.available 
+                    ? "bg-green-500/80 text-white" 
+                    : "bg-red-500/80 text-white"
+                }`}>
+                  {room.available ? "Available" : "Booked"}
+                </span>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">{room.type}</h3>
+
+                <p className="text-gray-500 text-sm mb-4">
+                  Fully furnished room with premium amenities and comfort.
+                </p>
+
+                {/* Price */}
+                <div className="flex justify-between items-center">
+                  <span className="text-2xl font-bold text-indigo-600">
+                    ₹{room.price}
+                    <span className="text-sm text-gray-400"> /month</span>
+                  </span>
+                  <Button 
+                    onClick={() => navigate(`/room/${room.id}`)}
+                    className="px-5 py-2 text-sm font-semibold rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition shadow-md"
+                  >
+                    View Details
+                  </Button>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+        ))
+      ) : (
+        <div className="col-span-full text-center py-16 bg-white/50 backdrop-blur-md rounded-3xl border border-gray-200">
+          <p className="text-lg font-bold text-slate-700">No rooms match your filter criteria.</p>
+          <p className="text-sm text-slate-500 mt-1">Try resetting the filters to view all spaces.</p>
+        </div>
+      )}
     </motion.div>
 
     {/* View More Button */}
@@ -546,7 +553,7 @@ const Home = () => {
 </section>
 
       {/* GALLERY */}
-      <section className="py-28 container mx-auto px-4">
+      <section className="overflow-hidden">
         <Gallery />
       </section>
 
@@ -684,15 +691,13 @@ const Home = () => {
           a: "Yes, daily housekeeping and room cleaning services are included."
         }
       ].map((item, i) => {
-        const [openIndex, setOpenIndex] = useState(null);
-
-        const isOpen = openIndex === i;
+        const isOpen = openFaqIndex === i;
 
         return (
           <div key={i}>
             {/* Question */}
             <button
-              onClick={() => setOpenIndex(isOpen ? null : i)}
+              onClick={() => setOpenFaqIndex(isOpen ? null : i)}
               className={`w-full flex justify-between items-center p-6 rounded-2xl text-left transition-all duration-300
                 ${isOpen 
                   ? "bg-white shadow-xl border border-indigo-200" 

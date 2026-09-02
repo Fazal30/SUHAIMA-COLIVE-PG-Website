@@ -8,6 +8,7 @@ const TermsOfService = () => {
         <SectionHeader 
           title={<span className="text-white">Terms of <span className="text-[#DAA520]">Service</span></span>} 
           subtitle="Please read these terms carefully before booking your stay." 
+          dark
         />
 
         <motion.div 

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { 
   FaWhatsapp, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, 
@@ -12,6 +13,19 @@ const Contact = () => {
   const whatsappNumber = "9187200607";
   const emailAddress = "suhaimacolivingpg@gmail.com";
   const locationText = "SUHAIMA COLIVING PG, GOLLAHALLI MAIN ROAD NEAR MY NEST APARTMENT, ELECTRONIC CITY, BANGALORE 560100";
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    room: "",
+    message: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const msg = `Hi SUHAIMA COLIVE PG!\n\nNew Website Inquiry:\n- Name: ${formData.name || "Resident"}\n- Phone: ${formData.phone || "Not specified"}\n- Room Preference: ${formData.room || "Any"}\n- Message: ${formData.message || "I would like more information about availability."}`;
+    window.open(`https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(msg)}`, "_blank");
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,6 +56,7 @@ const Contact = () => {
             title={<span className="text-white">Get in <span className="text-[#DAA520]">Touch</span></span>} 
             subtitle="Ready to join the SUHAIMA community? We're just a message away." 
             centered 
+            dark
           />
         </motion.div>
 
@@ -75,8 +90,15 @@ const Contact = () => {
                     icon: FaWhatsapp, 
                     t: "WhatsApp", 
                     v: "+91 91872 00607", 
-                    link: `https://wa.me/${whatsappNumber}`,
+                    link: `https://wa.me/91${whatsappNumber}`,
                     color: "text-green-500" 
+                  },
+                  { 
+                    icon: FaEnvelope, 
+                    t: "Email Support", 
+                    v: emailAddress, 
+                    link: `mailto:${emailAddress}`,
+                    color: "text-blue-400" 
                   },
                   { 
                     icon: FaMapMarkerAlt, 
@@ -139,25 +161,48 @@ const Contact = () => {
               <h3 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">Send a <span className="text-[#DAA520]">Message.</span></h3>
               <p className="text-slate-500 mb-12 font-medium">Have questions? Fill out the form and our manager will contact you.</p>
 
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
                   <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label>
-                  <Input placeholder="Your Name" className="h-16 bg-slate-100 border-none rounded-2xl focus:ring-2 focus:ring-[#DAA520]/50 text-slate-900 font-semibold placeholder:text-slate-400" />
+                  <Input 
+                    placeholder="Your Name" 
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                    className="h-16 bg-slate-100 border-none rounded-2xl focus:ring-2 focus:ring-[#DAA520]/50 text-slate-900 font-semibold placeholder:text-slate-400" 
+                  />
                 </div>
                 <div className="space-y-3">
                   <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Phone Number</label>
-                  <Input placeholder="+91 00000 00000" className="h-16 bg-slate-100 border-none rounded-2xl focus:ring-2 focus:ring-[#DAA520]/50 text-slate-900 font-semibold placeholder:text-slate-400" />
+                  <Input 
+                    type="tel"
+                    placeholder="+91 00000 00000" 
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    required
+                    className="h-16 bg-slate-100 border-none rounded-2xl focus:ring-2 focus:ring-[#DAA520]/50 text-slate-900 font-semibold placeholder:text-slate-400" 
+                  />
                 </div>
                 <div className="md:col-span-2 space-y-3">
                   <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Room Preference</label>
-                  <Input placeholder="Single / Double / Triple Sharing" className="h-16 bg-slate-100 border-none rounded-2xl focus:ring-2 focus:ring-[#DAA520]/50 text-slate-900 font-semibold placeholder:text-slate-400" />
+                  <Input 
+                    placeholder="Single / Double / Triple Sharing" 
+                    value={formData.room}
+                    onChange={(e) => setFormData({ ...formData, room: e.target.value })}
+                    className="h-16 bg-slate-100 border-none rounded-2xl focus:ring-2 focus:ring-[#DAA520]/50 text-slate-900 font-semibold placeholder:text-slate-400" 
+                  />
                 </div>
                 <div className="md:col-span-2 space-y-3">
                   <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Your Message</label>
-                  <Textarea placeholder="How can we help you?" className="min-h-[160px] bg-slate-100 border-none rounded-[2rem] p-6 focus:ring-2 focus:ring-[#DAA520]/50 text-slate-900 font-semibold placeholder:text-slate-400" />
+                  <Textarea 
+                    placeholder="How can we help you?" 
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="min-h-[160px] bg-slate-100 border-none rounded-[2rem] p-6 focus:ring-2 focus:ring-[#DAA520]/50 text-slate-900 font-semibold placeholder:text-slate-400" 
+                  />
                 </div>
                 <div className="md:col-span-2 mt-4">
-                  <Button className="w-full h-18 text-xl font-black rounded-[2rem] bg-[#0A0C10] text-white hover:bg-[#DAA520] hover:text-black transition-all group flex items-center justify-center gap-4">
+                  <Button type="submit" className="w-full h-18 text-xl font-black rounded-[2rem] bg-[#0A0C10] text-white hover:bg-[#DAA520] hover:text-black transition-all group flex items-center justify-center gap-4">
                     Send Inquiry <FaPaperPlane className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform" />
                   </Button>
                 </div>

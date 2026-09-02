@@ -16,6 +16,7 @@ const PrivacyPolicy = () => {
           <SectionHeader 
             title={<span className="text-white">Privacy <span className="text-[#DAA520]">Policy</span></span>} 
             subtitle="Last Updated: April 2026" 
+            dark
           />
         </motion.div>
 
@@ -31,7 +32,7 @@ const PrivacyPolicy = () => {
 
           {/* Content */}
           <div className="lg:col-span-3 space-y-16">
-            {sections.map((section, idx) => (
+            {sections.map((section) => (
               <motion.section 
                 key={section.id}
                 id={section.id}

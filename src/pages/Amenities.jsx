@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { 
   FaWifi, FaUtensils, FaShieldAlt, FaBolt, FaMotorcycle, 
-  FaCheckCircle, FaTv, FaWind, FaCoffee, FaGamepad, 
-  FaGlassCheers, FaDumbbell, FaWater, FaCouch 
+  FaCheckCircle, FaTv, FaWind, FaCoffee, 
+  FaDumbbell, FaWater, FaCouch 
 } from "react-icons/fa";
 import SectionHeader from "../components/shared/SectionHeader";
 import Menu from "./Menu";
@@ -74,6 +74,7 @@ const Amenities = () => {
           title={<span className="text-white">World-Class <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#DAA520]">Amenities</span></span>}
           subtitle="We’ve obsessed over the details so you can focus on your hustle."
           centered
+          dark
         />
 
         {/* --- BENTO GRID (Main Features) --- */}
@@ -144,7 +145,10 @@ const Amenities = () => {
             <h2 className="text-4xl font-black mb-2 leading-none">THE FULL EXPERIENCE.</h2>
             <p className="text-black/70 font-medium">All amenities are included in your monthly rent. No hidden charges.</p>
           </div>
-          <button className="bg-black text-white px-10 py-5 rounded-full font-bold hover:scale-105 transition-transform">
+          <button 
+            onClick={() => window.open("https://wa.me/919187200607?text=Hi%20SUHAIMA%20COLIVE%20PG,%20I%20would%20like%20to%20book%20a%20live%20tour!", "_blank")}
+            className="bg-black text-white px-10 py-5 rounded-full font-bold hover:scale-105 transition-transform"
+          >
             Book a Live Tour
           </button>
         </motion.div>

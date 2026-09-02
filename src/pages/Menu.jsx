@@ -1,10 +1,10 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionHeader from "../components/shared/SectionHeader";
 import { weeklyMenu } from "../data/menuData";
 import { 
   FaClock, FaSun, FaMoon, FaCalendarDay, 
-  FaUtensils, FaLeaf, FaFireAlt, FaArrowRight 
+  FaUtensils 
 } from "react-icons/fa";
 
 const MenuCard = ({ dayMenu, isToday, activeMealTab }) => {
@@ -105,13 +105,11 @@ const MenuCard = ({ dayMenu, isToday, activeMealTab }) => {
 };
 
 const Menu = () => {
-  const [todayIndex, setTodayIndex] = useState(-1);
-  const [filter, setFilter] = useState("all");
-
-  useEffect(() => {
+  const [todayIndex] = useState(() => {
     const day = new Date().getDay();
-    setTodayIndex(day === 0 ? 6 : day - 1);
-  }, []);
+    return day === 0 ? 6 : day - 1;
+  });
+  const [filter, setFilter] = useState("all");
 
   const filterButtons = [
     { id: "all", label: "Full Week", icon: FaCalendarDay },
@@ -132,6 +130,7 @@ const Menu = () => {
             title={<span>Executive <span className="text-[#DAA520]">Dining</span></span>} 
             subtitle="Premium home-style nutrition served daily." 
             centered 
+            dark
           />
 
           {/* Quick Filter Tabs */}
